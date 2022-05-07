@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name="house_criteria")
 @Data
-public class House_Criteria {
+public class HouseCriteria {
     @Id
     @GeneratedValue
     private Integer id_hc;
