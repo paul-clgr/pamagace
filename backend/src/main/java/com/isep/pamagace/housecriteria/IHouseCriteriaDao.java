@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IHouseCriteriaDao extends JpaRepository<House_Criteria, Integer> {
+public interface IHouseCriteriaDao extends JpaRepository<HouseCriteria, Integer> {
 }
