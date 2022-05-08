@@ -9,5 +9,14 @@
       <jdbc-url>jdbc:postgresql://postgresql-paulc.alwaysdata.net:5432/paulc_techweb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="backend/Hibernate" uuid="29939b8c-ef8a-46e9-abe7-3b0a30381a1e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://postgresql-paulc.alwaysdata.net:5432/paulc_techweb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
