@@ -10,17 +10,20 @@
         <module name="HomeExchange" />
         <module name="backend" />
         <module name="frontend" />
+        <module name="pamagace" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backend" target="1.8" />
       <module name="frontend" target="1.5" />
       <module name="HomeExchange" target="1.8" />
+      <module name="pamagace" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="backend" options="-parameters" />
+      <module name="pamagace" options="-parameters" />
     </option>
   </component>
 </project>
