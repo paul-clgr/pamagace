@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class Reservation {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_reservation;
 
     @OneToOne

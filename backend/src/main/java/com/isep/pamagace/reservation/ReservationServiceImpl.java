@@ -13,12 +13,6 @@ import java.util.List;
 @Service("reservationServiceImpl")
 @Transactional
 public class ReservationServiceImpl{
-    @Autowired
-    private IReservationDao reservationDao;
-    @Autowired
-    private EntityManager entityManager;
-
-
 
 
 }
