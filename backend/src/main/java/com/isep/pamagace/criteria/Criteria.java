@@ -8,7 +8,39 @@ import javax.persistence.*;
 @Table(name="criteria")
 @Data
 public class Criteria {
-    @Id
+    public Integer getId_criteria() {
+		return id_criteria;
+	}
+
+	public void setId_criteria(Integer id_criteria) {
+		this.id_criteria = id_criteria;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@Id
     @GeneratedValue
     private Integer id_criteria;
 
