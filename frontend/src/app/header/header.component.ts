@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   imagePDP!: string;
 
   ngOnInit() {
-    this.titleHeader= 'Pamagacé logement';
+    this.titleHeader= 'Home Exchange';
     this.titleLogo= 'Logo';
     this.imageLogo= 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
 
