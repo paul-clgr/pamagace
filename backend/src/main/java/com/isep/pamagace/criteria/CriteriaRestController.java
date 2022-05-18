@@ -1,6 +1,7 @@
 package com.isep.pamagace.criteria;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,4 +21,11 @@ public class CriteriaRestController {
 	List<Criteria> all() {
 		return criteria.findAll();
 	}
+	
+	@GetMapping("/id")
+	Optional<Criteria> byID(Integer id) {
+		return criteria.findById(id);
+	}
+	
+	
 }
