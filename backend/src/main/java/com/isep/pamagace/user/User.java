@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "utilisateur")
 @Data
 public class User implements Serializable, UserDetails {
     @Id
@@ -38,17 +38,21 @@ public class User implements Serializable, UserDetails {
     @Column(name = "birthday", nullable = false)
     private Date birthday;
 
-    @Column(name="authorization", nullable = false)
-    private String authorization;
+    @Column(name="role", nullable = false)
+    private String role;
 
-    public User(String username, String firstname, String lastname, String emailadress, String password, Date birthday, String authorization) {
+    public User(String username, String firstname, String lastname, String emailadress, String password, Date birthday, String role) {
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
         this.emailadress = emailadress;
         this.password = password;
         this.birthday = birthday;
-        this.authorization = authorization;
+        this.role = role;
+    }
+
+    public User() {
+
     }
 
     @Override
@@ -59,7 +63,7 @@ public class User implements Serializable, UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
-        GrantedAuthority authority = new SimpleGrantedAuthority(authorization);
+        GrantedAuthority authority = new SimpleGrantedAuthority(role);
         grantList.add(authority);
         return grantList;
     }

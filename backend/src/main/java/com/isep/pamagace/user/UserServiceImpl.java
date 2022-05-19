@@ -37,7 +37,7 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     @Transactional
     public User saveOrUpdateUser(User user) {
         if (null == user.getId_user()) {
-            user.setAuthorization("USER");
+            user.setRole("USER");
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         } else {
             Optional<User> userFromDB = findUserByID(user.getId_user());
