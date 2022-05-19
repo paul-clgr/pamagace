@@ -2,6 +2,7 @@ package com.isep.pamagace.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +24,17 @@ public class UserRestController {
         return userDao.findAll();
     }
 
+    @RequestMapping(value="/test", method = RequestMethod.GET)
+    public String testing(){return "It's working";}
+
     @PostMapping(value="/addUser")
     public User addUser(@RequestBody User user){
         return userService.saveOrUpdateUser(user);
     }
+
+    @RequestMapping(value="/login", method = RequestMethod.GET)
+    public String login(Model model){return "login";}
+
+
+
 }
