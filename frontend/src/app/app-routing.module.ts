@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccueilComponent} from "./accueil/accueil.component";
-import { PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {RouterModule, Routes} from "@angular/router";
+import {RecommandationsComponent} from "./components/recommandations/recommandations.component";
+import {AccueilComponent} from "./pages/accueil/accueil.component";
+import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
+  { path: 'recommandation', component: RecommandationsComponent},
   { path: '**', component: PageNotFoundComponent}
 ]
 

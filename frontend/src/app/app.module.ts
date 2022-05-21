@@ -9,27 +9,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from "@angular/material/slider";
 import { MatToolbarModule } from '@angular/material/toolbar'; //module pour le header
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { AccueilComponent } from './accueil/accueil.component'; //module pour le footer
-import {MatIconModule} from '@angular/material/icon'; //icons pour le site
-import {IvyCarouselModule} from 'angular-responsive-carousel';
-import { RechercheComponent } from './recherche/recherche.component';
+import { MatIconModule } from '@angular/material/icon'; //icons pour le site
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AppRoutingModule } from './app-routing.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RechercheFormComponent } from './components/recherche-form/recherche-form.component';
 import { RecommandationsComponent } from './components/recommandations/recommandations.component';
 import { RechercheListComponent } from './components/recherche-list/recherche-list.component';
+import { AccueilComponent } from './pages/accueil/accueil.component';
+import { RechercheComponent } from './pages/recherche/recherche.component';
+import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AccueilComponent,
-    RechercheComponent,
     PageNotFoundComponent,
     RechercheFormComponent,
     RecommandationsComponent,
-    RechercheListComponent
+    RechercheListComponent,
+    AccueilComponent,
+    RechercheComponent
   ],
   imports: [
     BrowserModule,
