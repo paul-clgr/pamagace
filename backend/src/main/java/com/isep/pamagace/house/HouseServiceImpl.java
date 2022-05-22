@@ -12,5 +12,11 @@ public class HouseServiceImpl implements IHouseService {
     @Autowired
     private IHouseDao houseDao;
 
+	@Override
+	public House saveOrUpdateHouse(House house) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }
