@@ -20,6 +20,16 @@ import { RechercheComponent } from './pages/recherche/recherche.component';
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 import { VisuMaisonComponent } from './pages/visu-maison/visu-maison.component';
 import { AffichageMaisonComponent } from './components/affichage-maison/affichage-maison.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import {HttpClientModule} from "@angular/common/http";
+import { UserComponent } from './components/user/user.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatCardModule} from "@angular/material/card";
+import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+
 
 @NgModule({
   declarations: [
@@ -34,6 +44,9 @@ import { AffichageMaisonComponent } from './components/affichage-maison/affichag
     RechercheComponent,
     VisuMaisonComponent,
     AffichageMaisonComponent
+    LoginComponent,
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +56,13 @@ import { AffichageMaisonComponent } from './components/affichage-maison/affichag
     MatSidenavModule,
     MatIconModule,
     IvyCarouselModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatCardModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
