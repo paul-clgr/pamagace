@@ -17,8 +17,9 @@ import java.util.List;
 @Data
 public class User implements Serializable, UserDetails {
     @Id
+    @Column(name="id_user")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_user;
+    private Integer iduser;
 
     @Column(name = "username", nullable = false)
     private String username;
