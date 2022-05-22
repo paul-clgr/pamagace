@@ -1,5 +1,6 @@
 package com.isep.pamagace.house;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -47,8 +48,5 @@ public class HouseRestController {
 	House addHouse(@RequestBody House house) {
 		return houseService.saveOrUpdateHouse(house);
 	}
-	
-	
-	
 
 }

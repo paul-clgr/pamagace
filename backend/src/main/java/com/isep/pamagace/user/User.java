@@ -16,6 +16,7 @@ import java.util.List;
 @Table(name = "utilisateur")
 @Data
 public class User implements Serializable, UserDetails {
+
     public Integer getIduser() {
 		return iduser;
 	}

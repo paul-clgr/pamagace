@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserRestController {
     @Autowired
@@ -44,4 +46,11 @@ public class UserRestController {
 
     @PostMapping(value="api/admin/declareAdmin")
     public User addAdminRole(@RequestBody User user){return userService.updateAdmin(user);}
+
+
+    @GetMapping(value="api/public/user/{username}")
+    public Optional<User> getUser(@PathVariable(value = "username") String username){
+        return userDao.findUserWithName(username);
+    }
+
 }

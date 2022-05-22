@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name="criteria")
 @Data
 public class Criteria {
+
     public Integer getId_criteria() {
 		return id_criteria;
 	}
@@ -41,6 +42,7 @@ public class Criteria {
 	}
 
 	@Id
+
     @GeneratedValue
     private Integer id_criteria;
 

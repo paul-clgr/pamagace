@@ -1,5 +1,6 @@
 package com.isep.pamagace.criteria;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,5 @@ public class CriteriaRestController {
 	Optional<Criteria> byID(Integer id) {
 		return criteria.findById(id);
 	}
-	
 	
 }

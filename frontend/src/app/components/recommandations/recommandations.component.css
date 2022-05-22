@@ -1,0 +1,13 @@
+p {
+color: black;
+font-family: Roboto, Helvetica, sans-serif;
+font-size: 22px;
+margin-left: 10px;
+}
+
+.carousel {
+  margin-left: 10px;
+  height: 20%;
+  width: 30%;
+  cellWidth: 1000px;
+}
