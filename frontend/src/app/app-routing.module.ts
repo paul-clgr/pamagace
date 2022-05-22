@@ -4,10 +4,12 @@ import {RouterModule, Routes} from "@angular/router";
 import {RecommandationsComponent} from "./components/recommandations/recommandations.component";
 import {AccueilComponent} from "./pages/accueil/accueil.component";
 import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
+import {RechercheComponent} from "./pages/recherche/recherche.component";
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
   { path: 'recommandation', component: RecommandationsComponent},
+  { path: 'recherche', component: RechercheComponent},
   { path: '**', component: PageNotFoundComponent}
 ]
 

@@ -5,6 +5,7 @@
 p {
   text-align: left;
   color: white;
+  font-size: 150%;
 }
 
 img {
@@ -17,5 +18,5 @@ mat-icon {
   color: white;
   right: 90%;
   vertical-align: bottom;
+  float: right;
 }
-
