@@ -4,4 +4,6 @@ import java.util.Collection;
 
 public interface IHouseService {
 	
+	House saveOrUpdateHouse(House house);
+	
 }

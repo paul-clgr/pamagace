@@ -11,13 +11,24 @@ import java.util.Date;
 @Data
 public class House {
 
+//	public String getId_user() {
+//		return id_user;
+//	}
+//
+//	public void setId_user(String id_user) {
+//		this.id_user = id_user;
+//	}
+
 	@Id
 	@GeneratedValue
 	private Integer id_house;
 
-//	@OneToOne
-//	@JoinColumn(name = "id_user")
-//	private User user;
+	@OneToOne
+	@JoinColumn(name = "id_user")
+	private User user;
+
+//	@Column(name = "id_user")
+//	private String id_user;
 
 	@Column(name = "adress")
 	private String adress;
@@ -30,6 +41,17 @@ public class House {
 
 	@Column(name = "description")
 	private String description;
+	
+	@Column(name = "city")
+	private String city;
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 
 	public Integer getId_house() {
 		return id_house;
@@ -39,13 +61,13 @@ public class House {
 		this.id_house = id_house;
 	}
 
-//	public User getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public String getAdress() {
 		return adress;

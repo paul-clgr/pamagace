@@ -50,7 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-ui.html",
                         "/webjars/**",
                         "/addUser",
-                        "/users").permitAll()
+                        "/users",
+                        "/api/**").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .antMatchers("/test").access("hasAnyRole('USER', 'ADMIN')")
                 .anyRequest().authenticated()
