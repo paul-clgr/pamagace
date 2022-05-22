@@ -48,7 +48,27 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
             }
         }
         return userDao.save(user);
+    }
 
+    public User saveOrUpdateUserAdmin(User user) {
+        if (null == user.getId_user()) {
+            user.setRole("ADMIN");
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        } else {
+            Optional<User> userFromDB = findUserByID(user.getId_user());
+            if (!bCryptPasswordEncoder.matches(user.getPassword(), userFromDB.get().getPassword())) {
+                user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            } else {
+                user.setPassword(userFromDB.get().getPassword());
+            }
+        }
+        return userDao.save(user);
+    }
+
+    @Override
+    public User updateAdmin(User user) {
+        user.setRole("ADMIN");
+        return userDao.save(user);
     }
 
 

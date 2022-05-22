@@ -35,7 +35,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
-
     }
 
     @Override
@@ -43,35 +42,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/api/user/**").hasAnyAuthority("USER", "ADMIN")
+                .antMatchers("/api/admin/**").hasAuthority("ADMIN")
                 .antMatchers("/", "/login", "/logout", "/v2/api-docs",
                         "/configuration/ui",
                         "/swagger-resources/**",
                         "/configuration/security",
                         "/swagger-ui.html",
                         "/webjars/**",
-                        "/addUser",
-                        "/users",
-                        "/api/**").permitAll()
-                .antMatchers("/admin/**").access("hasRole('ADMIN')")
-                .antMatchers("/test").access("hasAnyRole('USER', 'ADMIN')")
+                        "/api/public/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .exceptionHandling().accessDeniedPage("/403");
+                .exceptionHandling();
 
 
         // Config for Login Form
         http.authorizeRequests().and()
                 .authenticationProvider(getProvider())
-                .formLogin()//
-                // Submit URL of login page.
-                .loginProcessingUrl("/j_spring_security_check") // Submit URL
-                .loginPage("/login")//
-                .defaultSuccessUrl("/user")//
-                .failureUrl("/login?error=true")//
-                .usernameParameter("username")//
+                .formLogin()
+                .failureUrl("/login?error=true")
+                .usernameParameter("username")
                 .passwordParameter("password")
-                // Config for Logout Page
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
+                .and().logout();
 
     }
 
