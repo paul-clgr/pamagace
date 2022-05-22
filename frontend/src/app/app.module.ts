@@ -43,7 +43,7 @@ import {MatButtonModule} from "@angular/material/button";
     AccueilComponent,
     RechercheComponent,
     VisuMaisonComponent,
-    AffichageMaisonComponent
+    AffichageMaisonComponent,
     LoginComponent,
     AdminComponent,
     UserComponent
