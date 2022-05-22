@@ -27,7 +27,7 @@ public class UserRestController {
         return userDao.findAll();
     }
 
-    @PostMapping(value="api/addUser")
+    @PostMapping(value="api/public/addUser")
     public User addUser(@RequestBody User user){
         return userService.saveOrUpdateUser(user);
     }
