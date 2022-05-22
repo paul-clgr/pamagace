@@ -30,6 +30,8 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { PageProfilComponent } from './pages/page-profil/page-profil.component';
+import { ProfilComponent } from './components/profil/profil.component';
 import { HouseCardComponent } from './components/house-card/house-card.component';
 
 
@@ -50,6 +52,8 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     AdminComponent,
     UserComponent,
     UserFormComponent,
+    PageProfilComponent,
+    ProfilComponent,
     HouseCardComponent
   ],
   imports: [
