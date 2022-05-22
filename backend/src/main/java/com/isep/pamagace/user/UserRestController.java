@@ -5,6 +5,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -14,27 +15,25 @@ public class UserRestController {
     @Autowired
     private IUserService userService;
 
-    @RequestMapping(value="/user", method = RequestMethod.GET)
-    public String hello(@Param("name") String name){
-        return "Hello" + name;
+    @GetMapping(value="")
+    public String welcome(){return "Welcome";}
+    @RequestMapping(value="api/user/welcome", method = RequestMethod.GET)
+    public String hello(Principal principal){
+        return "Hello " + principal.getName();
     }
 
-    @RequestMapping(value="/users", method = RequestMethod.GET)
+    @RequestMapping(value="api/admin/users", method = RequestMethod.GET)
     public List<User> getUsers(){
         return userDao.findAll();
     }
 
-    @RequestMapping(value="/test", method = RequestMethod.GET)
-    public String testing(){return "It's working";}
-
-    @PostMapping(value="/addUser")
+    @PostMapping(value="api/addUser")
     public User addUser(@RequestBody User user){
         return userService.saveOrUpdateUser(user);
     }
 
-    @RequestMapping(value="/login", method = RequestMethod.GET)
-    public String login(Model model){return "login";}
-
-
-
+    @PostMapping(value="api/admin/addAdmin")
+    public User addAdminUser(@RequestBody User user){
+        return userService.saveOrUpdateUserAdmin(user);
+    }
 }
