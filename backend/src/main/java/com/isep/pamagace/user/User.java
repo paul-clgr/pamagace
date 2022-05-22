@@ -16,8 +16,69 @@ import java.util.List;
 @Table(name = "utilisateur")
 @Data
 public class User implements Serializable, UserDetails {
-    @Id
-    @Column(name="id_user")
+
+    public Integer getIduser() {
+		return iduser;
+	}
+
+	public void setIduser(Integer id_user) {
+		this.iduser = id_user;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmailadress() {
+		return emailadress;
+	}
+
+	public void setEmailadress(String emailadress) {
+		this.emailadress = emailadress;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	@Id
+	@Column(name = "id_user", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer iduser;
 

@@ -1,6 +1,8 @@
 package com.isep.pamagace.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -50,4 +52,5 @@ public class UserRestController {
     public Optional<User> getUser(@PathVariable(value = "username") String username){
         return userDao.findUserWithName(username);
     }
+
 }
