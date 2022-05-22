@@ -36,11 +36,11 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     @Override
     @Transactional
     public User saveOrUpdateUser(User user) {
-        if (null == user.getId_user()) {
+        if (null == user.getIduser()) {
             user.setRole("USER");
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         } else {
-            Optional<User> userFromDB = findUserByID(user.getId_user());
+            Optional<User> userFromDB = findUserByID(user.getIduser());
             if (!bCryptPasswordEncoder.matches(user.getPassword(), userFromDB.get().getPassword())) {
                 user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             } else {
@@ -51,11 +51,11 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     }
 
     public User saveOrUpdateUserAdmin(User user) {
-        if (null == user.getId_user()) {
+        if (null == user.getIduser()) {
             user.setRole("ADMIN");
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         } else {
-            Optional<User> userFromDB = findUserByID(user.getId_user());
+            Optional<User> userFromDB = findUserByID(user.getIduser());
             if (!bCryptPasswordEncoder.matches(user.getPassword(), userFromDB.get().getPassword())) {
                 user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
             } else {
