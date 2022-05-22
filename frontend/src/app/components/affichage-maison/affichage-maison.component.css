@@ -1,26 +1,54 @@
 p {
   font-size: 150%;
-  margin: 5%;
+  margin: 2%;
+}
+
+.intro p{
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
 }
 
 img {
-  width: 25%;
+  width: 20%;
   height: 25%;
   display: inline;
+  margin: 2%;
 }
 
-recapLgmt {
-
+.recapLgmt, .recapComm p {
+  font-weight: bold;
+  font-size: 200%;
 }
 
 .condition {
+  width: 45%;
+  height: 50%;
+  border: 2px solid #393939;
+  background: #393939;
+  margin: 2%;
+}
 
+.condition, .limite p {
+  color: white;
 }
 
 .limite {
-
+  width: 45%;
+  height: 50%;
+  border: 2px solid #393939;
+  background: #393939;
+  margin: 2%;
 }
 
-mat-icon {
+.recapComm {
+  display: inline;
+}
 
+button {
+  width: 15%;
+  height: 25%;
+  background-color: #393939;
+  color: white;
+  border-radius: 50%;
 }
