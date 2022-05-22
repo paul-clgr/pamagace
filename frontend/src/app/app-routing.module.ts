@@ -13,6 +13,9 @@ import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
 import {UserFormComponent} from "./components/user-form/user-form.component";
 
+import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
+
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -23,6 +26,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
+  {path: 'profil', component:PageProfilComponent},
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
