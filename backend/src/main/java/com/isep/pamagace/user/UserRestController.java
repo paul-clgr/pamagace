@@ -36,4 +36,12 @@ public class UserRestController {
     public User addAdminUser(@RequestBody User user){
         return userService.saveOrUpdateUserAdmin(user);
     }
+
+    @PostMapping(value="api/user/deleteUser")
+    public void deleteUser(@RequestBody User user){
+        userDao.delete(user);
+    }
+
+    @PostMapping(value="api/admin/declareAdmin")
+    public User addAdminRole(@RequestBody User user){return userService.updateAdmin(user);}
 }

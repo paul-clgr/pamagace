@@ -65,6 +65,12 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
         return userDao.save(user);
     }
 
+    @Override
+    public User updateAdmin(User user) {
+        user.setRole("ADMIN");
+        return userDao.save(user);
+    }
+
 
     private Optional<User> findUserByID(Integer id_user) {
         return userDao.findById(id_user);
