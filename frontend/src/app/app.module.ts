@@ -18,6 +18,8 @@ import { RechercheListComponent } from './components/recherche-list/recherche-li
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { RechercheComponent } from './pages/recherche/recherche.component';
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
+import { VisuMaisonComponent } from './pages/visu-maison/visu-maison.component';
+import { AffichageMaisonComponent } from './components/affichage-maison/affichage-maison.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -27,6 +29,7 @@ import {MatCardModule} from "@angular/material/card";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import {MatButtonModule} from "@angular/material/button";
     RechercheListComponent,
     AccueilComponent,
     RechercheComponent,
+    VisuMaisonComponent,
+    AffichageMaisonComponent
     LoginComponent,
     AdminComponent,
     UserComponent
