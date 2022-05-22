@@ -5,11 +5,13 @@ import {RecommandationsComponent} from "./components/recommandations/recommandat
 import {AccueilComponent} from "./pages/accueil/accueil.component";
 import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
 import {RechercheComponent} from "./pages/recherche/recherche.component";
+import {VisuMaisonComponent} from "./pages/visu-maison/visu-maison.component";
 
 const routes: Routes = [
   { path: 'accueil', component: AccueilComponent},
   { path: 'recommandation', component: RecommandationsComponent},
   { path: 'recherche', component: RechercheComponent},
+  { path: 'visumaison', component: VisuMaisonComponent},
   { path: '**', component: PageNotFoundComponent}
 ]
 

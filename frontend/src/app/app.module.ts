@@ -18,6 +18,8 @@ import { RechercheListComponent } from './components/recherche-list/recherche-li
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { RechercheComponent } from './pages/recherche/recherche.component';
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
+import { VisuMaisonComponent } from './pages/visu-maison/visu-maison.component';
+import { AffichageMaisonComponent } from './components/affichage-maison/affichage-maison.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.com
     RecommandationsComponent,
     RechercheListComponent,
     AccueilComponent,
-    RechercheComponent
+    RechercheComponent,
+    VisuMaisonComponent,
+    AffichageMaisonComponent
   ],
   imports: [
     BrowserModule,
