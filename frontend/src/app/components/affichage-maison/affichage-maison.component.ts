@@ -27,7 +27,7 @@ export class AffichageMaisonComponent implements OnInit {
 
   ngOnInit(): void {
     this.titreMaison = "Park House";
-    this.note = "5/5";
+    this.note = "5";
     this.adresse = "3 rue Jean Dunand, 75013, Paris";
     this.photo1 = "https://q-xx.bstatic.com/images/hotel/max1024x768/750/75006837.jpg";
     this.photo2 = "https://photo.barnes-international.com/annonces/bms/111/xl/17181965645f219d33ac0973.31884369_a6028841d1_1920.jpg";

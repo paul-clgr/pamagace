@@ -1,6 +1,9 @@
 <body>
 
-<p> {{titreMaison}} - {{note}} - {{adresse}}</p>
+<div class="intro">
+<p> {{titreMaison}} - {{note}}&#11088;/5 - {{adresse}}</p>
+
+</div>
 
 <div class="images">
   <img src={{photo1}} title="maisonExt">
@@ -10,30 +13,25 @@
 </div>
 
 <div class="recapLgmt">
-  <mat-icon class="person">person</mat-icon>
-  <p> {{recapLgmt}} </p>
+  <p>&#10145;  {{recapLgmt}} </p>
 </div>
 
 <div class="condition">
-  <mat-icon class="done">done</mat-icon>
-  <p> {{condition1}}</p>
-
-  <mat-icon class="done">done</mat-icon>
-  <p> {{condition2}}</p>
-
-  <mat-icon class="done">done</mat-icon>
-  <p> {{condition3}}</p>
+  <p>&#10004; {{condition1}}</p>
+  <p>&#10004; {{condition2}}</p>
+  <p>&#10004; {{condition3}}</p>
 </div>
 
 <div class="limite">
-  <mat-icon class="unpublished">unpublished</mat-icon>
-  <p> {{limite1}}</p>
+  <p>&#10006; {{limite1}}</p>
+  <p>&#10006; {{limite2}}</p>
+  <p>&#10006; {{limite3}}</p>
+</div>
 
-  <mat-icon class="unpublished">unpublished</mat-icon>
-  <p> {{limite2}}</p>
+<br/> <br/>
+<div class="recapComm">
+  <p> {{recapComm}} <button> RESERVE </button> </p>
 
-  <mat-icon class="unpublished">unpublished</mat-icon>
-  <p> {{limite3}}</p>
 </div>
 
 </body>
