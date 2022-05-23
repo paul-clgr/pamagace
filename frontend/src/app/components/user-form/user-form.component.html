@@ -1,0 +1,54 @@
+<mat-card >
+  <mat-card-header>
+    <mat-card-title>Inscription</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+      <table>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Nom d'utilisateur</mat-label>
+            <input matInput [(ngModel)]="username" name="username" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Adresse mail</mat-label>
+            <input matInput placeholder="exempl@gmail.com" [(ngModel)]="emailadress" name="emailadress" required type="email">
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Prénom</mat-label>
+            <input matInput placeholder="Jean" [(ngModel)]="firstname" name="firstname" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Dupont" [(ngModel)]="lastname" name="lastname" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Date de naissance</mat-label>
+            <input matInput [(ngModel)]="birthday" name="birthday" required type="date">
+          </mat-form-field>
+        </tr>
+        <tr>
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="password" type="password" name="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </tr>
+      </table>
+      <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary">Valider</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>
+

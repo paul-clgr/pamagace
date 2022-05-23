@@ -11,6 +11,7 @@ import {AdminComponent} from "./pages/admin/admin.component";
 import {AuthGuard} from "./auth/auth.guard";
 import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
+import {UserFormComponent} from "./components/user-form/user-form.component";
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'recherche', component: RechercheComponent},
   { path: 'visumaison', component: VisuMaisonComponent},
   {path: 'connexion', component:LoginComponent},
+  {path: 'inscription', component:UserFormComponent},
   {path: 'user', component:UserComponent},
   {
     path: 'admin', component: AdminComponent,
