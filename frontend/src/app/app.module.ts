@@ -29,6 +29,8 @@ import {MatCardModule} from "@angular/material/card";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { ReservationComponent } from './components/reservation/reservation.component';
+import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import {MatButtonModule} from "@angular/material/button";
     AffichageMaisonComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    ReservationComponent,
+    ReservationPageComponent
   ],
   imports: [
     BrowserModule,

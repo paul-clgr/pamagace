@@ -11,6 +11,7 @@ import {AdminComponent} from "./pages/admin/admin.component";
 import {AuthGuard} from "./auth/auth.guard";
 import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
+import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'visumaison', component: VisuMaisonComponent},
   {path: 'connexion', component:LoginComponent},
   {path: 'user', component:UserComponent},
+  {path: 'reservation', component:ReservationPageComponent}
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
