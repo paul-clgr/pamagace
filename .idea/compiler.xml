@@ -7,17 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="HomeExchange" />
-        <module name="backend" />
-        <module name="frontend" />
+
         <module name="pamagace" />
+        <module name="backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backend" target="1.8" />
-      <module name="frontend" target="1.5" />
-      <module name="HomeExchange" target="1.8" />
-      <module name="pamagace" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -1,0 +1,22 @@
+* {
+  background-color: #393939;
+}
+
+p {
+  text-align: left;
+  color: white;
+  font-size: 150%;
+}
+
+img {
+  width: 70px;
+  border-radius: 95px;
+  vertical-align: bottom; /*enlever l'espace en dessous de l'image*/
+}
+
+mat-icon {
+  color: white;
+  right: 90%;
+  vertical-align: bottom;
+  float: right;
+}

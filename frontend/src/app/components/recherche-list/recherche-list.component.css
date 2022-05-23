@@ -1,0 +1,43 @@
+img {
+  width: 45%;
+  height: 50%;
+  margin-left: 2%;
+}
+
+.ovale {
+  width: 20%;
+  height: 60%;
+  margin: 5%;
+  border: 2px solid #393939;
+  border-radius: 60px;
+  background: #393939;
+  color: white;
+  font-size: 150%;
+  text-align: center;
+  display: inline;
+}
+
+.ovale p {
+  color: white;
+  font-size: 150%;
+  text-align: center;
+  background-color: #393939;
+}
+
+.rectangle {
+  width: 45%;
+  height: 50%;
+  margin-right: 2%;
+  border: 2px solid #393939;
+  float: right;
+  background: #393939;
+
+}
+
+.rectangle p {
+  color: white;
+  font-size: 150%;
+  text-align: center;
+  background-color: #393939;
+  margin: 5%;
+}
