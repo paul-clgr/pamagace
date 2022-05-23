@@ -15,13 +15,13 @@ import {UserFormComponent} from "./components/user-form/user-form.component";
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/accueil', pathMatch: 'full'},
-  { path: 'accueil', component: AccueilComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: AccueilComponent},
   { path: 'recommandation', component: RecommandationsComponent},
   { path: 'recherche', component: RechercheComponent},
   { path: 'visumaison', component: VisuMaisonComponent},
-  {path: 'connexion', component:LoginComponent},
-  {path: 'inscription', component:UserFormComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
   {
     path: 'admin', component: AdminComponent,

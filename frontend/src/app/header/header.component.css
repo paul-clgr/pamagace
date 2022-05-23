@@ -2,10 +2,11 @@
   background-color: #393939;
 }
 
-p {
+ span{
   text-align: left;
   color: white;
-  font-size: 150%;
+  font-size: 125%;
+   margin-left: 5px;
 }
 
 img {
@@ -18,5 +19,9 @@ mat-icon {
   color: white;
   right: 90%;
   vertical-align: bottom;
-  float: right;
+
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }

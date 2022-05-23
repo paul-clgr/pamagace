@@ -34,6 +34,6 @@ export class UserFormComponent implements OnInit {
         next: user => this.user = user,
         error: error => this.error = error
       })
-    this.router.navigate(['/accueil']);
+    this.router.navigate(['/home']);
   }
 }
