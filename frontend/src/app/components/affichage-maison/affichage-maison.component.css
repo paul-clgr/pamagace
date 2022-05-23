@@ -24,20 +24,23 @@ img {
 .condition {
   width: 45%;
   height: 50%;
-  border: 2px solid #393939;
-  background: #393939;
+  border: 2px solid black;
+  background: #afb3b0;
+  border-radius: 8px;
   margin: 2%;
+
 }
 
 .condition, .limite p {
-  color: white;
+  color: black;
 }
 
 .limite {
   width: 45%;
   height: 50%;
   border: 2px solid #393939;
-  background: #393939;
+  background: #afb3b0;
+  border-radius: 8px;
   margin: 2%;
 }
 

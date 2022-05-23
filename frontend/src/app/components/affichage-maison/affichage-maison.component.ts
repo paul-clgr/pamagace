@@ -15,6 +15,7 @@ export class AffichageMaisonComponent implements OnInit {
   photo3!: string;
   photo4!: string;
   recapLgmt!: string;
+  description!: string;
   condition1!: string;
   condition2!: string;
   condition3!: string;
@@ -34,6 +35,7 @@ export class AffichageMaisonComponent implements OnInit {
     this.photo3 = "https://www.book-a-flat.com/photo/paris/8928/chambre.jpg";
     this.photo4 = "https://www.book-a-flat.com/magazine/wp-content/uploads/2018/12/salon-salle-a-manger-cuisine-ouverte-appartement-meuble-paris-Trocadero-481x321.jpg";
     this.recapLgmt = "Apartment in Paris - 2 rooms";
+    this.description = "Nice apartement located in Paris, near the metro.";
     this.condition1 = "Water the plants !";
     this.condition2 = "Feed the fish !";
     this.condition3 = "Aerate the apartment";

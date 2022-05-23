@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
-  {path: 'profil', component:PageProfilComponent},
+  {path: 'profile', component:PageProfilComponent},
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
