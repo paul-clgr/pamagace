@@ -1,5 +1,7 @@
 .intro p{
   text-align: center;
+  font-weight: bold;
+  font-size: 150%;
 }
 
 .intro img {
