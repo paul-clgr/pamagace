@@ -50,7 +50,7 @@ import { ProfilComponent } from './components/profil/profil.component';
     LoginComponent,
     AdminComponent,
     UserComponent,
-    UserFormComponent
+    UserFormComponent,
     PageProfilComponent,
     ProfilComponent
   ],
