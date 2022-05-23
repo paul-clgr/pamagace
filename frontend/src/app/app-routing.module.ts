@@ -20,9 +20,9 @@ import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: AccueilComponent},
-  { path: 'recommandation', component: RecommandationsComponent},
-  { path: 'recherche', component: RechercheComponent},
-  { path: 'visumaison', component: VisuMaisonComponent},
+  { path: 'recommendation', component: RecommandationsComponent},
+  { path: 'research', component: RechercheComponent},
+  { path: 'visualhouse', component: VisuMaisonComponent},
   {path: 'login', component:LoginComponent},
   {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
