@@ -1,7 +1,7 @@
 package com.isep.pamagace.reservation;
 
-import com.isep.pamagace.house.House;
-import com.isep.pamagace.user.User;
+import com.isep.pamagace.house.*;
+import com.isep.pamagace.user.*;
 import lombok.Data;
 
 import javax.persistence.*;

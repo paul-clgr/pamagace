@@ -10,13 +10,13 @@ import java.util.List;
 
 @Repository
 public interface IReservationDao extends JpaRepository<Reservation, Integer> {
-    /*@Query("Select r from Reservation r Where r.id_reservation = ?1")
+    @Query("Select r from Reservation r Where r.id_reservation = ?1")
     Reservation findReservationById(int id_reservation);
 
-    @Query("Select r from Reservation r Where r.id_user = ?1")
-    List<Reservation> findReservationByUserID(int id_user);*/
+    @Query(value="Select r from Reservation r Where r.id_user = ?1", nativeQuery = true)
+    List<Reservation> findReservationByUserID(int id_user);
 
-   /*@Query("SELECT r FROM Reservation r " + "WHERE r.id_house = :id")
+    /*@Query("SELECT r FROM Reservation r " + "WHERE r.id_house = :id")
     List<Reservation> findReservationByHouseID(@Param("id") int id);*/
 
     @Query("SELECT r FROM Reservation r")
