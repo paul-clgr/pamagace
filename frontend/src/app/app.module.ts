@@ -32,6 +32,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { MessageComponent } from './components/message/message.component';
+import { InboxComponent } from './pages/inbox/inbox.component';
 import { HouseCardComponent } from './components/house-card/house-card.component';
 
 
@@ -53,6 +55,9 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     UserComponent,
     UserFormComponent,
     PageProfilComponent,
+    ProfilComponent,
+    MessageComponent,
+    InboxComponent,
     ProfilComponent,
     HouseCardComponent
   ],
