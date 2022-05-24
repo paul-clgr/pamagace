@@ -12,6 +12,7 @@ import {AuthGuard} from "./auth/auth.guard";
 import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
 import {UserFormComponent} from "./components/user-form/user-form.component";
+import {InboxComponent} from "./pages/inbox/inbox.component";
 
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
   {path: 'profile', component:PageProfilComponent},
+  {path: 'inbox', component: InboxComponent},
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}

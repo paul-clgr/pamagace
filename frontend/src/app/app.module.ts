@@ -32,6 +32,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { MessageComponent } from './components/message/message.component';
+import { InboxComponent } from './pages/inbox/inbox.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { ProfilComponent } from './components/profil/profil.component';
     UserComponent,
     UserFormComponent,
     PageProfilComponent,
-    ProfilComponent
+    ProfilComponent,
+    MessageComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,
