@@ -47,8 +47,8 @@ public class HouseRestController {
 	}
 	
 	@PostMapping("/addhouse")
-	House addHouse(@RequestBody House house) {
-		return houseService.saveOrUpdateHouse(house);
+	House addHouse(@RequestBody HouseUserCriteria houseUserCriteria) {
+		return houseService.saveOrUpdateHouse(houseUserCriteria.getHouse(), houseUserCriteria.getIdUser(), houseUserCriteria.getCriteria());
 	}
 
 }
