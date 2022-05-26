@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/house")
+@RequestMapping("/api/public/house")
 public class HouseRestController {
 	@Autowired
 	private final IHouseDao house;
@@ -45,8 +45,8 @@ public class HouseRestController {
 	}
 	
 	@PostMapping("/addhouse")
-	House addHouse(@RequestBody House house) {
-		return houseService.saveOrUpdateHouse(house);
+	House addHouse(@RequestBody HouseUserCriteria houseUserCriteria) {
+		return houseService.saveOrUpdateHouse(houseUserCriteria.getHouse(), houseUserCriteria.getIdUser(), houseUserCriteria.getCriteria());
 	}
 
 }
