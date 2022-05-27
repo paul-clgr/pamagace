@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add a criteria</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" #addCriteriaForm="ngForm" (ngSubmit)="add(addCriteriaForm)">
+      <table>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="name" name="name" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="description" name="description" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-radio-group aria-label="Type" [(ngModel)]="category" name="category" required color="primary">
+            <mat-radio-button *ngFor="let chosenCategory of categories" [value]="chosenCategory">{{chosenCategory}}</mat-radio-button>
+          </mat-radio-group>
+        <tr>
+        <button mat-raised-button type="submit" color="primary">Add</button>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+
+

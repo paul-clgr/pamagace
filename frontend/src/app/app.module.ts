@@ -38,7 +38,7 @@ import { HouseFormComponent } from './components/house-form/house-form.component
 import {MatRadioModule} from "@angular/material/radio";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatSelectModule} from "@angular/material/select";
->>>>>>> 531e80e (add formulare to add house)
+import { CriteriaFormComponent } from './components/criteria-form/criteria-form.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,8 @@ import {MatSelectModule} from "@angular/material/select";
     ProfilComponent,
     MessageComponent,
     InboxComponent,
-    HouseFormComponent
+    HouseFormComponent,
+    CriteriaFormComponent
 
   ],
   imports: [

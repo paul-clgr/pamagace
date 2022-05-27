@@ -15,6 +15,7 @@ import {UserFormComponent} from "./components/user-form/user-form.component";
 import {InboxComponent} from "./pages/inbox/inbox.component";
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 import {HouseFormComponent} from "./components/house-form/house-form.component";
+import {CriteriaFormComponent} from "./components/criteria-form/criteria-form.component";
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'signin', component:UserFormComponent},
   {path: 'addHouse', component:HouseFormComponent},
+  {path: 'addCriteria', component:CriteriaFormComponent},
   {path: 'user', component:UserComponent},
   {path: 'profile', component:PageProfilComponent},
   {path: 'inbox', component: InboxComponent},
