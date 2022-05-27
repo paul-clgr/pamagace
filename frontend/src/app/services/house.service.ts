@@ -3,6 +3,8 @@ import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
 import {catchError, Observable, tap, throwError} from "rxjs";
 import {User} from "../models/user";
 import {House} from "../models/house";
+import {Criteria} from "../models/criteria";
+import {A} from "@angular/cdk/keycodes";
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +31,12 @@ export class HouseService {
     );
   }
 
+  getHousebyId(id: string | null): Observable<House> {
+    return this.http.get<House>('http://localhost:8080/api/public/house/'+id, ).pipe(
+      tap(house => console.log('house: ', house)),
+      catchError(this.handleError)
+    );
+  }
   getAllHouse(): Observable<House[]>{
     return this.http.get<House[]>(
       `${this.baseUrl}/all`
@@ -64,4 +72,5 @@ export class HouseService {
     }
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
+
 }

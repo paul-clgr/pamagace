@@ -16,15 +16,9 @@ img {
   margin: 2%;
 }
 
-.recapLgmt, .recapComm p {
-  font-weight: bold;
-  font-size: 200%;
-}
 
-.condition {
-  width: 45%;
-  height: 50%;
-  border: 2px solid black;
+.condition, .limite{
+  border: 2px solid #393939;
   background: #afb3b0;
   border-radius: 8px;
   margin: 2%;
@@ -35,17 +29,9 @@ img {
   color: black;
 }
 
-.limite {
-  width: 45%;
-  height: 50%;
-  border: 2px solid #393939;
-  background: #afb3b0;
-  border-radius: 8px;
-  margin: 2%;
-}
-
-.recapComm {
-  display: inline;
+table{
+  width: 100%;
+  text-align: left;
 }
 
 button {
@@ -53,10 +39,18 @@ button {
   height: 25%;
   background-color: #393939;
   color: white;
-  border-radius: 50%;
+  margin-right: auto;
+  margin-left: 38%;
+
+}
+.mat-card-footer {
+  margin-bottom:16px;
 }
 
-.description {
-  font-size: 100%;
-  font-weight: normal;
-}
+ mat-icon{
+   vertical-align: middle;
+ }
+
+ .main-card{
+   margin: 10px;
+ }

@@ -1,3 +1,5 @@
+import {Criteria} from "./criteria";
+
 import { User } from "./user";
 
 export interface House {
@@ -9,6 +11,7 @@ export interface House {
   type:string;
   idUser?:number;
   idCriterias: number[];
+  criterias?: Criteria[];
   id_house: number;
   user: User
 }
