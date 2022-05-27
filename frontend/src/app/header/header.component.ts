@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toProfil(){
-    this.router.navigate(['/login']);
+    this.router.navigate(['/profile']);
   }
 
   toForum(){

@@ -16,6 +16,7 @@ import {InboxComponent} from "./pages/inbox/inbox.component";
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 import {HouseFormComponent} from "./components/house-form/house-form.component";
 import {CriteriaFormComponent} from "./components/criteria-form/criteria-form.component";
+import {AffichageMaisonComponent} from "./components/affichage-maison/affichage-maison.component";
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'recommendation', component: RecommandationsComponent},
   { path: 'research', component: RechercheComponent},
   { path: 'visualhouse', component: VisuMaisonComponent},
+  {path: 'house/:id', component:AffichageMaisonComponent},
   {path: 'login', component:LoginComponent},
   {path: 'signin', component:UserFormComponent},
   {path: 'addHouse', component:HouseFormComponent},
