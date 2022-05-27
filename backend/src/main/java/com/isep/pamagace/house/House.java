@@ -1,5 +1,8 @@
 package com.isep.pamagace.house;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.isep.pamagace.criteria.Criteria;
 import com.isep.pamagace.user.User;
 import lombok.Data;
@@ -44,6 +47,7 @@ public class House implements Serializable {
 	@JoinTable(name="criteria_house",
 	joinColumns = @JoinColumn(name="id_house"),
 	inverseJoinColumns = @JoinColumn(name="id_criteria"))
+	@JsonIgnoreProperties("houses")
 	List<Criteria> criterias;
 	public House() {
 
