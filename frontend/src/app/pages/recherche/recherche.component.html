@@ -2,11 +2,10 @@
 
 <app-recherche-form (dataEvent)="receiveData($event)"></app-recherche-form>
 
-<button (click)="console()">Click</button>
+<!-- <button (click)="console()">Click</button> -->
 
-{{data}}
 
-<app-house-card></app-house-card>
+<app-house-card [data]="data"></app-house-card>
 
 <!-- <app-recherche-list></app-recherche-list> -->
 

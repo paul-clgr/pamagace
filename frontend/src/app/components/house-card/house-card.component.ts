@@ -19,7 +19,8 @@ export class HouseCardComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes:SimpleChanges): void {
 
-    console.log(this.data)
+    console.log("card");
+    console.log(this.data);
     
   }
 

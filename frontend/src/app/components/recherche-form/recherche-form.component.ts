@@ -29,14 +29,15 @@ export class RechercheFormComponent implements OnInit {
 
     let criteria = searchForm.value;
     console.log(criteria);
-    this.houseService.getHouseByCriteria(criteria).subscribe(data=>this.data=data);
+    this.houseService.getHouseByCriteria(criteria).subscribe(data=>{this.data=data; this.dataEvent.emit(this.data);});
     this.router.navigate(['/recherche']);
+    
 
   }
 
-  console(){
-    console.log("form");
-    this.dataEvent.emit(this.data);
-    console.log(this.data);
-  }
+  // console(){
+  //   console.log("form");
+  //   this.dataEvent.emit(this.data);
+  //   console.log(this.data);
+  // }
 }

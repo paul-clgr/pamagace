@@ -20,7 +20,7 @@
         <th>
           <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Nb of room</mat-label>
-            <input matInput type="number" [(ngModel)]="bedrooms" name="bedrooms">
+            <input matInput type="number" [(ngModel)]="bedrooms" name="bedrooms" min="1">
           </mat-form-field>
         </th>
         <th>
@@ -39,5 +39,5 @@
   </mat-card-content>
 </mat-card>
 
-<button (click)="console()">Click</button>
+<!-- <button (click)="console()">Click</button> -->
 
