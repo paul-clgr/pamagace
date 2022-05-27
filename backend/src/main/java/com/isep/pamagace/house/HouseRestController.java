@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-
 @RequestMapping("/api/public/house")
 public class HouseRestController {
 	@Autowired
@@ -33,8 +32,8 @@ public class HouseRestController {
 		return house.findAll();
 	}
 
-	@GetMapping("/id")
-	Optional<House> byId(Integer id) {
+	@GetMapping("/{id}")
+	Optional<House> byId(@PathVariable int id) {
 		return house.findById(id);
 	}
 	
