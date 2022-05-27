@@ -34,6 +34,10 @@ import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { MessageComponent } from './components/message/message.component';
 import { InboxComponent } from './pages/inbox/inbox.component';
+import { HouseFormComponent } from './components/house-form/house-form.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatSelectModule} from "@angular/material/select";
 import {MatListModule} from "@angular/material/list";
 import { HouseCardComponent } from './components/house-card/house-card.component';
 
@@ -59,26 +63,32 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     ProfilComponent,
     MessageComponent,
     InboxComponent,
+    HouseFormComponent,
+
+    InboxComponent,
     ProfilComponent,
     HouseCardComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatSliderModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        MatIconModule,
-        IvyCarouselModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatFormFieldModule,
-        MatCardModule,
-        FormsModule,
-        MatInputModule,
-        MatButtonModule,
-        MatListModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    IvyCarouselModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatCardModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatChipsModule,
+    MatSelectModule,
+    MatListModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [MatToolbarModule]

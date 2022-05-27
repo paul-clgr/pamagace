@@ -13,9 +13,8 @@ import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
 import {UserFormComponent} from "./components/user-form/user-form.component";
 import {InboxComponent} from "./pages/inbox/inbox.component";
-
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
-
+import {HouseFormComponent} from "./components/house-form/house-form.component";
 
 
 const routes: Routes = [
@@ -25,7 +24,8 @@ const routes: Routes = [
   { path: 'research', component: RechercheComponent},
   { path: 'visualhouse', component: VisuMaisonComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'sighin', component:UserFormComponent},
+  {path: 'signin', component:UserFormComponent},
+  {path: 'addHouse', component:HouseFormComponent},
   {path: 'user', component:UserComponent},
   {path: 'profile', component:PageProfilComponent},
   {path: 'inbox', component: InboxComponent},
