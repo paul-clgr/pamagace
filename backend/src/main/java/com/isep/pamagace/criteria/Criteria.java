@@ -1,5 +1,8 @@
 package com.isep.pamagace.criteria;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.isep.pamagace.house.House;
 import lombok.Data;
 
@@ -58,6 +61,7 @@ public class Criteria {
     private String category;
 
 	@ManyToMany(mappedBy = "criterias")
+			@JsonIgnoreProperties("criterias")
 	List<House> houses;
 	public Criteria(String name, String description, String category) {
 		this.name = name;
