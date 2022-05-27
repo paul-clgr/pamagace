@@ -11,16 +11,16 @@
             <input matInput [(ngModel)]="city" name="city">
           </mat-form-field>
         </th>
-        <th>
+        <!-- <th>
           <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Date</mat-label>
             <input matInput [(ngModel)]="date" name="date" type="date">
           </mat-form-field>
-        </th>
+        </th> -->
         <th>
           <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Nb of room</mat-label>
-            <input matInput type="number" [(ngModel)]="room" name="room">
+            <input matInput type="number" [(ngModel)]="bedrooms" name="bedrooms">
           </mat-form-field>
         </th>
         <th>
@@ -30,7 +30,7 @@
           </mat-form-field>
 
         <th>
-          <button mat-raised-button type="submit" color="primary">
+          <button mat-raised-button type="submit" color="primary" click="getHouseSearch">
             <mat-icon>search</mat-icon>
           </button>
         </th>
@@ -39,4 +39,5 @@
   </mat-card-content>
 </mat-card>
 
+<button (click)="console()">Click</button>
 
