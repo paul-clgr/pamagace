@@ -1,7 +1,7 @@
 package com.isep.pamagace.reservation;
 
-import com.isep.pamagace.house.House;
-import com.isep.pamagace.user.User;
+import com.isep.pamagace.house.*;
+import com.isep.pamagace.user.*;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class Reservation {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_reservation;
 
     @OneToOne
