@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { RechercheFormComponent } from 'src/app/components/recherche-form/recherche-form.component';
+import { House } from 'src/app/models/house';
 
 @Component({
   selector: 'app-recherche',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RechercheComponent implements OnInit {
 
+
+
+
+  data!: House[];
+
   constructor() { }
+  
 
   ngOnInit(): void {
   }
+
+  receiveData($event: House[]) {
+    this.data = $event
+  }
+  console(){
+    console.log("recherche");
+    console.log(this.data);
+  }
+  
 
 }

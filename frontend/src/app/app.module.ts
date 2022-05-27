@@ -29,6 +29,8 @@ import {MatCardModule} from "@angular/material/card";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { HouseCardComponent } from './components/house-card/house-card.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import {MatButtonModule} from "@angular/material/button";
     AffichageMaisonComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    UserFormComponent,
+    HouseCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,12 @@
 <body>
 
-<app-recherche-form></app-recherche-form>
-<app-recherche-list></app-recherche-list>
+<app-recherche-form (dataEvent)="receiveData($event)"></app-recherche-form>
+
+<!-- <button (click)="console()">Click</button> -->
+
+
+<app-house-card [data]="data"></app-house-card>
+
+<!-- <app-recherche-list></app-recherche-list> -->
 
 </body>
