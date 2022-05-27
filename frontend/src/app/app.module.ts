@@ -34,7 +34,11 @@ import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { MessageComponent } from './components/message/message.component';
 import { InboxComponent } from './pages/inbox/inbox.component';
-
+import { HouseFormComponent } from './components/house-form/house-form.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatSelectModule} from "@angular/material/select";
+>>>>>>> 531e80e (add formulare to add house)
 
 @NgModule({
   declarations: [
@@ -56,7 +60,9 @@ import { InboxComponent } from './pages/inbox/inbox.component';
     PageProfilComponent,
     ProfilComponent,
     MessageComponent,
-    InboxComponent
+    InboxComponent,
+    HouseFormComponent
+
   ],
   imports: [
     BrowserModule,
@@ -73,6 +79,9 @@ import { InboxComponent } from './pages/inbox/inbox.component';
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    MatRadioModule,
+    MatChipsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
