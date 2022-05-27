@@ -25,7 +25,7 @@ export class HouseFormComponent implements OnInit {
 
   types: string[] = ['House', 'Apartment'];
 
-  house !: House
+  house !: House;
   error !: string;
 
 
@@ -48,10 +48,10 @@ export class HouseFormComponent implements OnInit {
     })
 
   }
-
+/*
   toggleSelection(chip: MatChip) {
     chip.toggleSelected();
   }
-
+*/
 
 }

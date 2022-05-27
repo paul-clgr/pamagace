@@ -38,9 +38,9 @@ import { HouseFormComponent } from './components/house-form/house-form.component
 import {MatRadioModule} from "@angular/material/radio";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatSelectModule} from "@angular/material/select";
+import { CriteriaFormComponent } from './components/criteria-form/criteria-form.component';
 import {MatListModule} from "@angular/material/list";
 import { HouseCardComponent } from './components/house-card/house-card.component';
-
 
 @NgModule({
   declarations: [
@@ -64,7 +64,7 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     MessageComponent,
     InboxComponent,
     HouseFormComponent,
-
+    CriteriaFormComponent,
     InboxComponent,
     ProfilComponent,
     HouseCardComponent
