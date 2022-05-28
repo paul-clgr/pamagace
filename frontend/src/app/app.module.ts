@@ -34,6 +34,7 @@ import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { MessageComponent } from './components/message/message.component';
 import { InboxComponent } from './pages/inbox/inbox.component';
+import {MatListModule} from "@angular/material/list";
 import { HouseCardComponent } from './components/house-card/house-card.component';
 
 
@@ -61,22 +62,23 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     ProfilComponent,
     HouseCardComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    IvyCarouselModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatCardModule,
-    FormsModule,
-    MatInputModule,
-    MatButtonModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatIconModule,
+        IvyCarouselModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatFormFieldModule,
+        MatCardModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatListModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [MatToolbarModule]
