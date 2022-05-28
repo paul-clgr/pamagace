@@ -34,6 +34,7 @@ import { PageProfilComponent } from './pages/page-profil/page-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { MessageComponent } from './components/message/message.component';
 import { InboxComponent } from './pages/inbox/inbox.component';
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -58,22 +59,23 @@ import { InboxComponent } from './pages/inbox/inbox.component';
     MessageComponent,
     InboxComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    IvyCarouselModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatCardModule,
-    FormsModule,
-    MatInputModule,
-    MatButtonModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatIconModule,
+        IvyCarouselModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatFormFieldModule,
+        MatCardModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatListModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [MatToolbarModule]

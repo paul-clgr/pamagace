@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.presentationFooter= 'You can contact us thanks to the following links: ';
-    this.liens= 'https://fr.wikihow.com/ins%C3%A9rer-un-lien-hypertexte-dans-document-HTML';
+    this.liens= '';
 
 
   }

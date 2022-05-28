@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
+  nomPers!: string;
+  msgPers!: string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.nomPers = 'John Cena';
+    this.msgPers = 'Hello ! I  am really insterested by your house !';
   }
 
 }
