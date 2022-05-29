@@ -1,7 +1,7 @@
 <form>
     <mat-form-field>
         <mat-label>Enter the beginning and end of your reservation</mat-label>
-        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <mat-date-range-input [formGroup]="range">
             <input matStartDate formControlName="date_start" placeholder="Start date">
             <input matEndDate formControlName="date_end" placeholder="End date">
         </mat-date-range-input>

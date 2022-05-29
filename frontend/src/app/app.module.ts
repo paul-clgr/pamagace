@@ -33,6 +33,7 @@ import { ReservationComponent } from './components/reservation/reservation.compo
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { HouseCardComponent } from './components/house-card/house-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

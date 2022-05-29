@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-reservation',
@@ -12,6 +13,12 @@ import { catchError, throwError } from 'rxjs';
 export class ReservationComponent implements OnInit {
   id_user = 0;
   id_house = 0;
+
+  range = new FormGroup({
+    start_date: new FormControl(),
+    end_date: new FormControl(),
+  })
+  
   constructor(private http: HttpClient) {
    }
 
@@ -24,8 +31,8 @@ export class ReservationComponent implements OnInit {
     this.http.post("localhost:8080/reservation/post", {
       "id_user": this.id_user,
       "id_house": this.id_house,
-      "start_date": form.value.start_date,
-      "end_date": form.value.end_date
+      "start_date": this.range.value.start_date,
+      "end_date": this.range.value.end_date
     }).pipe(catchError(this.handleError));
   }
 
