@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.presentationFooter= 'You can contact us thanks to the following links: ';
+    this.presentationFooter= 'You can contact us at this address: 10 rue de Vanves, 92130, Issy-les-Moulineaux.';
     this.liens= '';
 
 
