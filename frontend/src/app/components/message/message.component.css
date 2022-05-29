@@ -1,8 +1,34 @@
+
+.flex-container{
+  display: flex;
+}
+
 .contact {
-  width: 50%;
+  width:25%;
   float: left;
 }
 
-.messages{
+.messages p {
+  font-size: 0.8rem;
+  margin: 0 0 0.2rem 0;
+  color: black;
+  font-size: 165%;
+  margin: auto;
+}
 
+input.textarea {
+
+
+  left: 0px;
+  right: 0px;
+  width: 50%;
+  height: 50px;
+  z-index: 99;
+  background: #fafafa;
+  border: none;
+  outline: none;
+  padding-left: 55px;
+  padding-right: 55px;
+  color: #666;
+  font-weight: 400;
 }

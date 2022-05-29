@@ -50,15 +50,18 @@ const routes: Routes = [
 
   {path: 'research', component: RechercheComponent},
 
+  {path: 'inbox', component: InboxComponent},
+  {path: 'visualhouse', component: VisuMaisonComponent},
+
   {path: '**', component: PageNotFoundComponent}
 
 
   //{path: 'recommendation', component: RecommandationsComponent},
 
-  //{path: 'visualhouse', component: VisuMaisonComponent},
+
   //{path: 'user', component: UserComponent},
 
-  //{path: 'inbox', component: InboxComponent},
+  //
 ]
 
 

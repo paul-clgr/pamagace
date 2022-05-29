@@ -4,5 +4,7 @@ mat-card{
   margin-right: auto;
   display : flex;
   margin-top:10px;
+  background-color: white;
 }
+
 
