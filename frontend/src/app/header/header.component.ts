@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../auth/auth.service";
 
@@ -7,7 +7,7 @@ import {AuthService} from "../auth/auth.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges  {
   titleHeader!: string;
   titleLogo!: string;
   isLoggedIn!:boolean;
@@ -25,6 +25,15 @@ export class HeaderComponent implements OnInit {
     this.titleLogo= 'Logo';
     //this.imageLogo= 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
 
+    this.isLoggedIn = this.authService.isLoggedIn();
+    if(this.isLoggedIn){
+      this.username = localStorage.getItem('USERNAME');
+      this.role = localStorage.getItem('ROLE');
+    }
+
+  }
+
+  ngOnChanges(){
     this.isLoggedIn = this.authService.isLoggedIn();
     if(this.isLoggedIn){
       this.username = localStorage.getItem('USERNAME');

@@ -22,7 +22,7 @@ import {VisuMaisonComponent} from './pages/visu-maison/visu-maison.component';
 import {AffichageMaisonComponent} from './components/affichage-maison/affichage-maison.component';
 import {LoginComponent} from './pages/login/login.component';
 import {AdminComponent} from './pages/admin/admin.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {UserComponent} from './components/user/user.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
@@ -43,11 +43,12 @@ import {LogoutComponent} from './components/logout/logout.component';
 import {MatListModule} from "@angular/material/list";
 import {HouseCardComponent} from './components/house-card/house-card.component';
 import {MatMenuModule} from "@angular/material/menu";
+import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import {MatTableModule} from "@angular/material/table";
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagerieComponent } from './pages/messagerie/messagerie.component';
-import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -103,8 +104,9 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
     MatTableModule,
     MatMenuModule,
+    MatTableModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent],
   exports: [MatToolbarModule]
 })

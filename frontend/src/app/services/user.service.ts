@@ -51,4 +51,22 @@ export class UserService {
       );
     }
 
+  addAdmin(user: User): Observable<User>{
+    return this.http.post<User>('http://localhost:8080/api/admin/addAdmin', {
+      "username": user.username,
+      "firstname": user.firstname,
+      "lastname": user.lastname,
+      "emailadress": user.emailadress,
+      "password": user.password,
+      "birthday": user.birthday
+    }).pipe(
+      tap(user=> console.log('user: ', user)),
+      catchError(this.handleError)
+    );
+  }
+
+  deleteUserbyId(id: number) {
+    return this.http.get('http://localhost:8080/api/admin/deleteUser/'+ id).pipe(catchError(this.handleError));
+  }
+
 }
