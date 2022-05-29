@@ -16,8 +16,11 @@ public interface IReservationDao extends JpaRepository<Reservation, Integer> {
     @Query(value="Select r from Reservation r Where r.id_user = ?1", nativeQuery = true)
     List<Reservation> findReservationByUserID(int id_user);
 
-    /*@Query("SELECT r FROM Reservation r " + "WHERE r.id_house = :id")
-    List<Reservation> findReservationByHouseID(@Param("id") int id);*/
+    @Query(value = "SELECT r FROM Reservation r WHERE r.id_house = ?1", nativeQuery = true)
+    List<Reservation> findReservationsByHouseID(int id);
+
+    @Query(value = "SELECT r FROM Reservation r WHERE r.id_house = ?1 AND r.status = 2", nativeQuery = true)
+    List<Reservation> findCurrentReservationsByHouseID(int id);
 
     @Query("SELECT r FROM Reservation r")
     List<Reservation> findAllReservations();
