@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
-  {path: 'reservation', component:ReservationPageComponent}
+  {path: 'reservation', component:ReservationPageComponent},
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}

@@ -31,9 +31,7 @@ public class ReservationRestController {
 
     @RequestMapping(value = "api/public/reservation/post", method = RequestMethod.POST)
     public void postReservation(@RequestParam("id_user") int id_user, @RequestParam("id_house") int id_house,
-                                             @RequestParam("date_start") String date_start, @RequestParam("date_end") String date_end,
-                                             @RequestParam("grade_house") int grade_house, @RequestParam("grade_host") int grade_host,
-                                             @RequestParam("grade_visitor") int grade_visitor, @RequestParam("status") int status) throws Exception {
+                                             @RequestParam("date_start") String date_start, @RequestParam("date_end") String date_end) throws Exception {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date_s = formatter.parse(date_start);
         Date date_e = formatter.parse(date_end);
@@ -44,8 +42,33 @@ public class ReservationRestController {
                 throw new Exception("House unavailable these dates.");
             }
         }
-        reservationService.insertReservation(id_user, id_house, date_s, date_e, grade_house, grade_host, grade_visitor, status);
+        reservationService.insertReservation(id_user, id_house, date_s, date_e);
+
     }
 
+    @RequestMapping(value = "api/public/reservation/update/grade/host/{id_reservation}", method = RequestMethod.PUT)
+    public void putGradeHost(@PathVariable("id_reservation") int id_reservation, @RequestParam("grade_host") int grade_host) {
+        reservationService.setHostGrade(id_reservation, grade_host);
+    }
+
+    @RequestMapping(value = "api/public/reservation/update/grade/house/{id_reservation}", method = RequestMethod.PUT)
+    public void putGradeHouse(@PathVariable("id_reservation") int id_reservation, @RequestParam("grade_house") int grade_house) {
+        reservationService.setHouseGrade(id_reservation, grade_house);
+    }
+
+    @RequestMapping(value = "api/public/reservation/update/grade/visitor/{id_reservation}", method = RequestMethod.PUT)
+    public void putGradeVisitor(@PathVariable("id_reservation") int id_reservation, @RequestParam("grade_visitor") int grade_visitor) {
+        reservationService.setVisitorGrade(id_reservation, grade_visitor);
+    }
+
+    @RequestMapping(value = "api/public/reservation/get/house/grade/{id_house}", method = RequestMethod.GET)
+    public int getHouseGrade(@PathVariable("id_house") int id_house) {
+        return reservationDao.findHouseGrade(id_house);
+    }
+
+    @RequestMapping(value = "api/public/reservation/get/user/grade/{id_user}", method = RequestMethod.GET)
+    public int getUserGrade(@PathVariable("id_user") int id_user) {
+        return reservationDao.findUserGrade(id_user);
+    }
 
     }
