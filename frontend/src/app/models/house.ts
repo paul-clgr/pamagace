@@ -3,7 +3,7 @@ import {Criteria} from "./criteria";
 import { User } from "./user";
 
 export interface House {
-  id?: number;
+  idhouse?: number;
   adress:string;
   bedrooms:number;
   city:string;
@@ -12,6 +12,5 @@ export interface House {
   idUser?:number;
   idCriterias: number[];
   criterias?: Criteria[];
-  id_house: number;
   user: User
 }

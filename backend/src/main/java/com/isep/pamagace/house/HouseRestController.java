@@ -46,7 +46,7 @@ public class HouseRestController {
 	
 	@PostMapping("/search")
 	List<House> byCriteria(@RequestBody HouseSearchCriterias houseSearchCriterias){
-		return house.findByBedroomsAndCityAndCriterias_idcriteriaIn(houseSearchCriterias.getBedrooms(), houseSearchCriterias.getCity(), houseSearchCriterias.getIdcriterias());
+		return house.findDistinctByBedroomsAndCityAndCriterias_idcriteriaIn(houseSearchCriterias.getBedrooms(), houseSearchCriterias.getCity(), houseSearchCriterias.getIdcriterias());
 	}
 	
 	@PostMapping("/addhouse")

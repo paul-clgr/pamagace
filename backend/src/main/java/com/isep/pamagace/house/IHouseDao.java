@@ -13,6 +13,6 @@ public interface IHouseDao extends JpaRepository<House, Integer> {
 	
 	List<House> findAllByuserIduser(Integer id_user);
 	
-	List<House> findByBedroomsAndCityAndCriterias_idcriteriaIn( Integer bedrooms, String city, List<Integer> idCriterias);
+	List<House> findDistinctByBedroomsAndCityAndCriterias_idcriteriaIn( Integer bedrooms, String city, List<Integer> idCriterias);
 	
 }

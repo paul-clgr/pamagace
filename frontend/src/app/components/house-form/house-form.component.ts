@@ -28,6 +28,8 @@ export class HouseFormComponent implements OnInit {
   house !: House;
   error !: string;
 
+  update:boolean=false;
+
 
   constructor(private activatedRoute: ActivatedRoute, private houseService: HouseService, private router: Router, private criteriaService: CriteriaService) { }
 
@@ -40,6 +42,7 @@ export class HouseFormComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.id);
     if (this.id){
+      this.update=true;
       console.log(this.getHouseValues(this.id));
     }
   }
@@ -59,8 +62,8 @@ export class HouseFormComponent implements OnInit {
   }
 */
 
-  getHouseValues(id:String){
-    let res = this.houseService.getHousebyId(this.id).subscribe({
+  getHouseValues(id:string){
+    let res = this.houseService.getHousebyId(id).subscribe({
       next: house => {
         this.house = house;
         // this.getConditions();

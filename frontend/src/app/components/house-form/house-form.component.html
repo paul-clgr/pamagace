@@ -1,6 +1,8 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Add a house</mat-card-title>
+    <mat-card-title *ngIf="!update">Add a house</mat-card-title>
+    <mat-card-title *ngIf="update">Update a house</mat-card-title>
+
   </mat-card-header>
   <mat-card-content>
     <form class="example-form" #addHouseForm="ngForm" (ngSubmit)="add(addHouseForm)">
@@ -30,7 +32,7 @@
         </tr>
         <tr>
           <mat-form-field appearance="fill" class="example-full-width">
-            <mat-label>Nb of room</mat-label>
+            <mat-label>Nb of rooms</mat-label>
             <input matInput type="number" [(ngModel)]="bedrooms" name="bedrooms" required>
           </mat-form-field>
         </tr>
@@ -53,8 +55,11 @@
             </mat-select>
           </mat-form-field>
         </tr>
-        <button mat-raised-button type="submit" color="primary">
-          Ajouter
+        <button *ngIf="update" mat-raised-button type="submit" color="primary">
+          Update
+        </button>
+        <button *ngIf="!update" mat-raised-button type="submit" color="primary">
+          Add
         </button>
       </table>
     </form>

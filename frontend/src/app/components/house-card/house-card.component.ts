@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { House } from 'src/app/models/house';
 
 @Component({
@@ -8,7 +9,7 @@ import { House } from 'src/app/models/house';
 })
 export class HouseCardComponent implements OnInit, OnChanges {
 
-  constructor() { }
+  constructor(private router: Router) { }
   
   @Input() data!: House[];
 
@@ -22,6 +23,10 @@ export class HouseCardComponent implements OnInit, OnChanges {
     console.log("card");
     console.log(this.data);
     
+  }
+
+  toHouse(id:any){
+    this.router.navigate(['/house/'+id]);
   }
 
 }

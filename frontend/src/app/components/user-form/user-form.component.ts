@@ -3,7 +3,7 @@ import {NgForm} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-form',
@@ -18,14 +18,20 @@ export class UserFormComponent implements OnInit {
   password!: string;
   birthday!:string;
 
+  usernameupdate?: string|null;
+
   hide = true;
   user !: User;
   error !: string;
 
-  constructor(private http: HttpClient, private userService: UserService, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient, private userService: UserService, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.usernameupdate = this.activatedRoute.snapshot.paramMap.get('username');
+    if (this.usernameupdate){
+      this.getUserValues(this.usernameupdate);
+    }
   }
 
   signIn(form: NgForm) {
@@ -35,5 +41,20 @@ export class UserFormComponent implements OnInit {
         error: error => this.error = error
       })
     this.router.navigate(['/home']);
+  }
+
+  getUserValues(username:string){
+    let res = this.userService.getUser(username).subscribe({
+      next: user => {
+        this.username=user.username;
+        this.firstname=user.firstname;
+        this.lastname=user.lastname;
+        this.emailadress=user.emailadress;
+        this.birthday=user.birthday.substring(0,10);
+        console.log(user.birthday, this.birthday);
+      },
+      error: error => this.error = error
+
+      })
   }
 }

@@ -44,6 +44,12 @@ const routes: Routes = [
     path: 'admin/users', component: UserComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
+
+  { 
+    path: 'admin/updateuser/:username', component: UserFormComponent, 
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
+  },
+
   {
     path: 'admin/addCriteria', component: CriteriaFormComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
@@ -52,7 +58,7 @@ const routes: Routes = [
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   }, 
-  {path: 'recherche', component: RechercheComponent},
+  {path: 'search', component: RechercheComponent},
   {path: '**', component: PageNotFoundComponent},
 
 
