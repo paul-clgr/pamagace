@@ -53,4 +53,7 @@ public class UserRestController {
         return userDao.findUserWithName(username);
     }
 
+    @GetMapping(value="api/user/testco")
+    public String testCo(){return "La co est assurée";}
+
 }
