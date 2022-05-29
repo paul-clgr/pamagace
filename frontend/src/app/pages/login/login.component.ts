@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {UserService} from "../../services/user.service";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, tap, throwError} from "rxjs";
+import {Router} from "@angular/router";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   password!: string;
   hide = true;
 
-  constructor(private userService: UserService, private http: HttpClient) {
+  constructor(private userService: UserService, private http: HttpClient, private router: Router, private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -23,19 +25,18 @@ export class LoginComponent implements OnInit {
 
   login(form: NgForm) {
     console.log(form.value)
-    this.http.post("http://localhost:8080/login", {
-      "username": form.value.username,
-      "password": form.value.password
-    }).pipe(catchError(this.handleError));
+    const username = form.value.username;
+    const password = form.value.password;
+    let res = this.authService.getConnexion(username, password).subscribe({
+        next: data => {
+          console.log(data);
+          this.authService.login(data.username, data.role);
+        }
+
+      })
+    ;
+    //this.router.navigate(['/users']);
   }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.status === 0) {
-      console.error('An error occurred:', error.error);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-    return throwError(() => new Error('Something bad happened; please try again later.'));
-  }
+
 }
