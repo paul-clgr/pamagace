@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/criteria")
+@RequestMapping("/api/public/criteria")
 public class CriteriaRestController {
 	
 	private final ICriteriaDao criteria;

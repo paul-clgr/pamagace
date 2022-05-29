@@ -11,6 +11,6 @@ public interface IHouseDao extends JpaRepository<House, Integer> {
 	
 	List<House> findAllByuserIduser(Integer id_user);
 	
-	List<House> findByTypeAndBedroomsAndCity(String type, Integer bedrooms, String city);
+	List<House> findByTypeOrBedroomsOrCity(String type, Integer bedrooms, String city);
 	
 }

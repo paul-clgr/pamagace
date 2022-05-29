@@ -12,15 +12,17 @@ import {AuthGuard} from "./auth/auth.guard";
 import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
+import {UserFormComponent} from "./components/user-form/user-form.component";
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/accueil', pathMatch: 'full'},
-  { path: 'accueil', component: AccueilComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: AccueilComponent},
   { path: 'recommandation', component: RecommandationsComponent},
   { path: 'recherche', component: RechercheComponent},
   { path: 'visumaison', component: VisuMaisonComponent},
-  {path: 'connexion', component:LoginComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
   {path: 'reservation', component:ReservationPageComponent}
   {

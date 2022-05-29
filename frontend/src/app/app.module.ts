@@ -31,6 +31,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { HouseCardComponent } from './components/house-card/house-card.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { ReservationPageComponent } from './pages/reservation-page/reservation-p
     UserComponent,
     ReservationComponent,
     ReservationPageComponent
+    UserFormComponent,
+    HouseCardComponent
   ],
   imports: [
     BrowserModule,
