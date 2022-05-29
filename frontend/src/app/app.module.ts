@@ -52,7 +52,7 @@ import { HouseCardComponent } from './components/house-card/house-card.component
     AdminComponent,
     UserComponent,
     ReservationComponent,
-    ReservationPageComponent
+    ReservationPageComponent,
     UserFormComponent,
     HouseCardComponent
   ],
