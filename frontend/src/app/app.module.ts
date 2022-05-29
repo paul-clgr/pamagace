@@ -45,6 +45,7 @@ import {HouseCardComponent} from './components/house-card/house-card.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import {MatTableModule} from "@angular/material/table";
+import { CreiteriaListComponent } from './components/creiteria-list/creiteria-list.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -80,7 +81,9 @@ import { MessagerieComponent } from './pages/messagerie/messagerie.component';
     InboxComponent,
     ProfilComponent,
     HouseCardComponent,
-    MessagerieComponent
+    MessagerieComponent,
+    HouseCardComponent,
+    CreiteriaListComponent
   ],
   imports: [
     BrowserModule,

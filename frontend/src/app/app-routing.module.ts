@@ -19,6 +19,7 @@ import {HouseFormComponent} from "./components/house-form/house-form.component";
 import {CriteriaFormComponent} from "./components/criteria-form/criteria-form.component";
 import {AffichageMaisonComponent} from "./components/affichage-maison/affichage-maison.component";
 import {LogoutComponent} from "./components/logout/logout.component";
+import {CreiteriaListComponent} from "./components/creiteria-list/creiteria-list.component";
 
 
 const routes: Routes = [
@@ -50,6 +51,10 @@ const routes: Routes = [
 },
 
   {
+    path: 'admin', component: AdminComponent,
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
+  },
+  {
     path: 'admin/users', component: UserComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
@@ -63,6 +68,10 @@ const routes: Routes = [
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
 
+  {
+    path: 'admin/criterias', component: CreiteriaListComponent,
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
+  },
   {
     path: 'admin/addCriteria', component: CriteriaFormComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}

@@ -69,8 +69,8 @@ export class HeaderComponent implements OnInit, OnChanges  {
   toHouses(){
     this.router.navigate(['/admin/houses']);
   }
-  toAddCriteria(){
-    this.router.navigate(['/admin/addCriteria']);
+  toCriterias(){
+    this.router.navigate(['/admin/criterias']);
   }
   toLogout(){
     this.router.navigate(['/logout']);
