@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../auth/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -9,16 +10,26 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
   titleHeader!: string;
   titleLogo!: string;
+  isLoggedIn!:boolean;
+  role!: string |null;
+  username!: string|null;
+
   //imageLogo!: string;
   //imageMess!: string;
   //imagePDP!: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService : AuthService) {
   }
   ngOnInit() {
     this.titleHeader= 'Home Exchange';
     this.titleLogo= 'Logo';
     //this.imageLogo= 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
+
+    this.isLoggedIn = this.authService.isLoggedIn();
+    if(this.isLoggedIn){
+      this.username = localStorage.getItem('USERNAME');
+      this.role = localStorage.getItem('ROLE');
+    }
 
   }
 
@@ -27,11 +38,33 @@ export class HeaderComponent implements OnInit {
   }
 
   toProfil(){
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/profil']);
   }
 
   toForum(){
     this.router.navigate(['/messagerie']);
+  }
+
+  toAddhouse(){
+    this.router.navigate(['/addHouse']);
+  }
+  toReservation(){
+    this.router.navigate(['/reservation']);
+  }
+  toEditProfil(){
+    this.router.navigate(['/edit']);
+  }
+  toUsers(){
+    this.router.navigate(['/admin/users']);
+  }
+  toHouses(){
+    this.router.navigate(['/admin/houses']);
+  }
+  toAddCriteria(){
+    this.router.navigate(['/admin/addCriteria']);
+  }
+  toLogout(){
+    this.router.navigate(['/logout']);
   }
 
 }

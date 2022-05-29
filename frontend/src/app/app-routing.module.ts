@@ -10,7 +10,7 @@ import {AdminComponent} from "./pages/admin/admin.component";
 import {AuthGuard} from "./auth/auth.guard";
 import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
-import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
+//import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import {UserFormComponent} from "./components/user-form/user-form.component";
 import { MessagerieComponent } from './pages/messagerie/messagerie.component';
 import {InboxComponent} from "./pages/inbox/inbox.component";
@@ -29,27 +29,37 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
 
   {path: 'house/:id', component: AffichageMaisonComponent},
-  {path: 'messagerie', component:MessagerieComponent}
+  {path: 'messagerie', component:MessagerieComponent},
 
   {
     path: 'addHouse', component: HouseFormComponent,
-    canActivate: [AuthGuard], data: {role: 'ADMIN'}
+    canActivate: [AuthGuard], data: {role: ['USER','ADMIN']}
+  },
+  {
+    path: 'profil', component: PageProfilComponent,
+    canActivate: [AuthGuard], data: {role: ['USER','ADMIN']}
+  },
+  {
+    path: 'edit', component: PageProfilComponent,
+    canActivate: [AuthGuard], data: {role: ['USER','ADMIN']}
   },
 
 {
     path: 'updatehouse/:id', component: HouseFormComponent,
     canActivate : [AuthGuard], data: {role: 'ADMIN'}
 },
-  {path: 'profil', component: PageProfilComponent,
-    canActivate: [AuthGuard], data: {role: 'ADMIN'}},
 
   {
     path: 'admin/users', component: UserComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
+  {
+    path: 'admin/houses', component: UserComponent,
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
+  },
 
-  { 
-    path: 'admin/updateuser/:username', component: UserFormComponent, 
+  {
+    path: 'admin/updateuser/:username', component: UserFormComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
 
@@ -60,13 +70,13 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
-  }, 
+  },
   {path: 'search', component: RechercheComponent},
   {path: '**', component: PageNotFoundComponent},
 
 
   //{path: 'recommendation', component: RecommandationsComponent},
- 
+
   //{path: 'visualhouse', component: VisuMaisonComponent},
   //{path: 'user', component: UserComponent},
 

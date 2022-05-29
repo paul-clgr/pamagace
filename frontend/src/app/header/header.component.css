@@ -1,9 +1,9 @@
-* {
+mat-toolbar {
   background-color: #393939;
   width: 100%;
 }
 
- span{
+.title{
   text-align: left;
   color: white;
   font-size: 125%;
@@ -26,3 +26,4 @@ mat-icon {
 .example-spacer {
   flex: 1 1 auto;
 }
+

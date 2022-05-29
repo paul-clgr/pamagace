@@ -42,6 +42,7 @@ import {CriteriaFormComponent} from './components/criteria-form/criteria-form.co
 import {LogoutComponent} from './components/logout/logout.component';
 import {MatListModule} from "@angular/material/list";
 import {HouseCardComponent} from './components/house-card/house-card.component';
+import {MatMenuModule} from "@angular/material/menu";
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -100,7 +101,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatListModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
