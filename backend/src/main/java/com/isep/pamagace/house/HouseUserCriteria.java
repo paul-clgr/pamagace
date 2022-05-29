@@ -21,4 +21,30 @@ private List<Integer> criteria;
 
     public HouseUserCriteria() {
     }
+
+//    getter setter paul
+    
+	public House getHouse() {
+		return house;
+	}
+
+	public void setHouse(House house) {
+		this.house = house;
+	}
+
+	public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+
+	public List<Integer> getCriteria() {
+		return criteria;
+	}
+
+	public void setCriteria(List<Integer> criteria) {
+		this.criteria = criteria;
+	}
 }

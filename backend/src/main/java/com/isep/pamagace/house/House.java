@@ -117,4 +117,20 @@ public class House implements Serializable {
 		this.city = city;
 	}
 
+	public List<Criteria> getCriterias() {
+		return criterias;
+	}
+
+	public void setCriterias(List<Criteria> criterias) {
+		this.criterias = criterias;
+	}
+
+	public Integer getIdhouse() {
+		return idhouse;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 }

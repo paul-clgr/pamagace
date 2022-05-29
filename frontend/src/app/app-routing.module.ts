@@ -30,10 +30,15 @@ const routes: Routes = [
 
   {
     path: 'addHouse', component: HouseFormComponent,
-    canActivate: [AuthGuard], data: {role: 'USER'}
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
+
+{
+    path: 'addHouse/:id', component: HouseFormComponent,
+    canActivate : [AuthGuard], data: {role: 'ADMIN'}
+},
   {path: 'profil', component: PageProfilComponent,
-    canActivate: [AuthGuard], data: {role: 'USER'}},
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}},
 
   {
     path: 'admin/users', component: UserComponent,
@@ -46,12 +51,13 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
-  },
-  {path: '**', component: PageNotFoundComponent}
+  }, 
+  {path: 'recherche', component: RechercheComponent},
+  {path: '**', component: PageNotFoundComponent},
 
 
   //{path: 'recommendation', component: RecommandationsComponent},
-  //{path: 'research', component: RechercheComponent},
+ 
   //{path: 'visualhouse', component: VisuMaisonComponent},
   //{path: 'user', component: UserComponent},
 
