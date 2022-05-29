@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.isep.pamagace.criteria.Criteria;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/public/house")
@@ -42,9 +44,9 @@ public class HouseRestController {
 		return house.findAllByuserIduser(id_user);
 	}
 	
-	@GetMapping("/search")
-	List<House> byCriteria(String type, Integer bedrooms, String city){
-		return house.findByTypeOrBedroomsOrCity(type, bedrooms, city);
+	@PostMapping("/search")
+	List<House> byCriteria(@RequestBody HouseSearchCriterias houseSearchCriterias){
+		return house.findByBedroomsAndCityAndCriterias_idcriteriaIn(houseSearchCriterias.getBedrooms(), houseSearchCriterias.getCity(), houseSearchCriterias.getIdcriterias());
 	}
 	
 	@PostMapping("/addhouse")

@@ -45,13 +45,23 @@ export class HouseService {
 
   getHouseByCriteria(house: House): Observable<House[]>{
     const url = `${this.baseUrl}/search`;
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append("bedrooms",house.bedrooms);
-    queryParams = queryParams.append("city",house.city);
-    queryParams = queryParams.append("type",house.type);
-    return this.http.get<House[]>(url,{params:queryParams});
-
+    return this.http.post<House[]>(url,
+      {
+        "bedrooms": house.bedrooms,
+        "city": house.city,
+        "idcriterias": house.idCriterias
+      });
   }
+
+  // getHouseByCriteria(house: House): Observable<House[]>{
+  //   const url = `${this.baseUrl}/search`;
+  //   let queryParams = new HttpParams();
+  //   queryParams = queryParams.append("bedrooms",house.bedrooms);
+  //   queryParams = queryParams.append("city",house.city);
+  //   queryParams = queryParams.append("type",house.type);
+  //   return this.http.get<House[]>(url,{params:queryParams});
+
+  // }
 
   // getStatsDemandesByMonth(minDate, maxDate): Observable<PeriodeRecueil[]> {
   //   return this.http.get<PeriodeRecueil[]>(

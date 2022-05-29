@@ -68,7 +68,7 @@ export class HouseFormComponent implements OnInit {
         this.type=this.house.type;
         this.city=this.house.city;
         this.bedrooms=this.house.bedrooms;
-        this.idCriterias=this.house.idCriterias;
+        // this.idCriterias=this.house.idCriterias;
         this.adress=this.house.adress;
       },
       error: error => this.error = error

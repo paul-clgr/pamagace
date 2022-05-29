@@ -1,10 +1,7 @@
-<p>house-card works!</p>
-
-
 <mat-card class="example-card" *ngFor="let house of data">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{house.adress}}</mat-card-title>
+      <mat-card-title>{{house.type}} in {{house.city}}</mat-card-title>
       <mat-card-subtitle>Owner : {{house.user.firstname}}</mat-card-subtitle>
     </mat-card-header>
     <!-- <img mat-card-image src="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200/>" alt="Photo of a Shiba Inu"> -->
@@ -13,10 +10,13 @@
       <p>
         {{house.description}}
       </p>
+      <p>
+        Adress : {{house.adress}}
+        
+      </p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>See more</button>
       <!-- <button mat-button>SHARE</button> -->
     </mat-card-actions>
   </mat-card>
-  

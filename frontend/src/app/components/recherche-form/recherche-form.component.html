@@ -24,9 +24,17 @@
           </mat-form-field>
         </th>
         <th>
-          <mat-form-field appearance="fill" class="example-full-width">
+          <!-- <mat-form-field appearance="fill" class="example-full-width">
             <mat-label>Category</mat-label>
             <input matInput [(ngModel)]="category" name="category">
+          </mat-form-field> -->
+
+          <mat-form-field appearance="fill">
+            <mat-label>Demands</mat-label>
+            <mat-select [ngModel]="criterias" name="idCriterias" multiple required >
+              <mat-option *ngFor="let criteria of criterias"
+                          [value]="criteria.idcriteria">{{criteria.name}}</mat-option>
+            </mat-select>
           </mat-form-field>
 
         <th>

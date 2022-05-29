@@ -34,7 +34,7 @@ const routes: Routes = [
   },
 
 {
-    path: 'addHouse/:id', component: HouseFormComponent,
+    path: 'updatehouse/:id', component: HouseFormComponent,
     canActivate : [AuthGuard], data: {role: 'ADMIN'}
 },
   {path: 'profil', component: PageProfilComponent,
