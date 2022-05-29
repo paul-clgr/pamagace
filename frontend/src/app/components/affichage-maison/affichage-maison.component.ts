@@ -32,7 +32,7 @@ export class AffichageMaisonComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    let test = this.houseService.getHousebyId(this.id).subscribe({
+    let res = this.houseService.getHousebyId(this.id).subscribe({
         next: house => {
           this.house = house;
           this.getConditions();

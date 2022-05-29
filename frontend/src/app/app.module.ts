@@ -39,6 +39,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatSelectModule} from "@angular/material/select";
 import { CriteriaFormComponent } from './components/criteria-form/criteria-form.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { CriteriaFormComponent } from './components/criteria-form/criteria-form.
     MessageComponent,
     InboxComponent,
     HouseFormComponent,
-    CriteriaFormComponent
+    CriteriaFormComponent,
+    LogoutComponent
 
   ],
   imports: [

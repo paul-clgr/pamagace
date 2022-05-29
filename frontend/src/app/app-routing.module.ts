@@ -17,6 +17,7 @@ import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 import {HouseFormComponent} from "./components/house-form/house-form.component";
 import {CriteriaFormComponent} from "./components/criteria-form/criteria-form.component";
 import {AffichageMaisonComponent} from "./components/affichage-maison/affichage-maison.component";
+import {LogoutComponent} from "./components/logout/logout.component";
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {path: 'user', component:UserComponent},
   {path: 'profile', component:PageProfilComponent},
   {path: 'inbox', component: InboxComponent},
+  {path: 'users', component: UserComponent},
+  {
+    path: 'logout', component: LogoutComponent
+  },
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}

@@ -19,6 +19,14 @@ export class UserService {
     );
   }
 
+  getUsers(): Observable<User[]>{
+    return this.http.get<User[]>('http://localhost:8080/api/admin/users').pipe(
+      tap(user=> console.log('user: ', user)),
+      catchError(this.handleError)
+    );
+  }
+
+
   private handleError(error: HttpErrorResponse){
     if (error.status === 0) {
       console.error('An error occurred:', error.error);
