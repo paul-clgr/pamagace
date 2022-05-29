@@ -1,39 +1,44 @@
-<body>
+<mat-card class="main-card">
+  <mat-card-header>
+    <mat-card-title>{{house.adress}}, {{house.city}} - {{note}}/5
+      <mat-icon>grade</mat-icon>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="images">
+      <img src={{photo1}} title="maisonExt">
+      <img src={{photo2}} title="maisonInt">
+      <img src={{photo3}} title="chambre">
+      <img src={{photo4}} title="cuisine">
+    </div>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>trending_flat</mat-icon>
+        {{house.type}} in {{house.city}} - {{house.bedrooms}} bedrooms
+      </mat-card-title>
+      <mat-card-content>{{house.description}}</mat-card-content>
+    </mat-card>
 
-<p> {{titreMaison}} - {{note}} - {{adresse}}</p>
+    <table>
+      <th>
+        <mat-card class="condition" *ngIf="conditions.length!=0">
+          <mat-card-content *ngFor="let condition of conditions">
+            <mat-icon>done</mat-icon>
+            {{condition.name}}
+          </mat-card-content>
+        </mat-card>
+      </th>
+      <th>
+        <mat-card class="limite" *ngIf="limites.length!=0">
+          <mat-card-content *ngFor="let limite of limites">
+            <mat-icon>clear</mat-icon>
+            {{limite.name}}
+          </mat-card-content>
+        </mat-card>
+      </th>
+    </table>
+    <button mat-raised-button type="button">RESERVER</button>
+  </mat-card-content>
 
-<div class="images">
-  <img src={{photo1}} title="maisonExt">
-  <img src={{photo2}} title="maisonInt">
-  <img src={{photo3}} title="chambre">
-  <img src={{photo4}} title="cuisine">
-</div>
+</mat-card>
 
-<div class="recapLgmt">
-  <mat-icon class="person">person</mat-icon>
-  <p> {{recapLgmt}} </p>
-</div>
-
-<div class="condition">
-  <mat-icon class="done">done</mat-icon>
-  <p> {{condition1}}</p>
-
-  <mat-icon class="done">done</mat-icon>
-  <p> {{condition2}}</p>
-
-  <mat-icon class="done">done</mat-icon>
-  <p> {{condition3}}</p>
-</div>
-
-<div class="limite">
-  <mat-icon class="unpublished">unpublished</mat-icon>
-  <p> {{limite1}}</p>
-
-  <mat-icon class="unpublished">unpublished</mat-icon>
-  <p> {{limite2}}</p>
-
-  <mat-icon class="unpublished">unpublished</mat-icon>
-  <p> {{limite3}}</p>
-</div>
-
-</body>

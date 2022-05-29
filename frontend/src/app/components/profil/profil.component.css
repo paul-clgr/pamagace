@@ -1,0 +1,24 @@
+.intro p{
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.intro img {
+  width: 10%;
+  height: 10%;
+  display: block;
+  margin: 0% auto;
+}
+
+img {
+  margin: 5%;
+  margin-left: 18%;
+  width: 25%;
+  height: 20%;
+  display: inline;
+}
+
+.expositionPhoto {
+
+}

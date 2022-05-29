@@ -1,20 +1,25 @@
 package com.isep.pamagace.criteria;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.isep.pamagace.house.House;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="criteria")
 @Data
 public class Criteria {
 
-    public Integer getId_criteria() {
-		return id_criteria;
+    public Integer getIdcriteria() {
+		return idcriteria;
 	}
 
-	public void setId_criteria(Integer id_criteria) {
-		this.id_criteria = id_criteria;
+	public void setIdcriteria(Integer id_criteria) {
+		this.idcriteria = id_criteria;
 	}
 
 	public String getName() {
@@ -42,9 +47,9 @@ public class Criteria {
 	}
 
 	@Id
-
-    @GeneratedValue
-    private Integer id_criteria;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_criteria")
+    private Integer idcriteria;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -54,4 +59,15 @@ public class Criteria {
 
     @Column(name = "category", nullable = false)
     private String category;
+
+	@ManyToMany(mappedBy = "criterias")
+			@JsonIgnoreProperties("criterias")
+	List<House> houses;
+	public Criteria(String name, String description, String category) {
+		this.name = name;
+		this.description = description;
+		this.category = category;
+	}
+
+	public Criteria(){}
 }

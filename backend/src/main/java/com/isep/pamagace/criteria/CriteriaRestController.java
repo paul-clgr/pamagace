@@ -4,28 +4,35 @@ package com.isep.pamagace.criteria;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/public/criteria")
 public class CriteriaRestController {
+	@Autowired
+	private ICriteriaDao criteriaDao;
+	@Autowired
+	private ICriteriaService criteriaService;
 	
-	private final ICriteriaDao criteria;
-	
-	CriteriaRestController(ICriteriaDao criteria){
-		this.criteria=criteria;
+	//CriteriaRestController(ICriteriaDao criteria){
+	//	this.criteriaDao =criteria;
+	//}
+
+	public CriteriaRestController() {
 	}
-	
+
 	@GetMapping("/all")
 	List<Criteria> all() {
-		return criteria.findAll();
+		return criteriaDao.findAll();
 	}
 	
 	@GetMapping("/id")
 	Optional<Criteria> byID(Integer id) {
-		return criteria.findById(id);
+		return criteriaDao.findById(id);
 	}
-	
+
+	@PostMapping("/addCriteria")
+	Criteria addCriteria(@RequestBody Criteria newCriteria){ return criteriaService.saveOrUpdateCritera(newCriteria);}
 }

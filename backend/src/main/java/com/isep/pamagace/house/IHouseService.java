@@ -1,10 +1,12 @@
 package com.isep.pamagace.house;
 
 
-import java.util.Collection;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 public interface IHouseService {
-	
-	House saveOrUpdateHouse(House house);
 
+
+	House saveOrUpdateHouse(House house, int idUser, List<Integer> idCriteria);
 }
