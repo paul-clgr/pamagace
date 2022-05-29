@@ -65,7 +65,7 @@ h1 {
   height: 50%;
   position: relative;
   /* you can change the animation settings from below */
-  /*animation: slideshow 5s infinite;*/
+  animation: slideshow 10s infinite;
 }
 /* define width and height for images*/
 .slide {

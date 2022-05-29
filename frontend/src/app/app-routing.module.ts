@@ -47,11 +47,14 @@ const routes: Routes = [
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
+
+  {path: 'research', component: RechercheComponent},
+
   {path: '**', component: PageNotFoundComponent}
 
 
   //{path: 'recommendation', component: RecommandationsComponent},
-  //{path: 'research', component: RechercheComponent},
+
   //{path: 'visualhouse', component: VisuMaisonComponent},
   //{path: 'user', component: UserComponent},
 
