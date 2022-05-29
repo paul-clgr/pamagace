@@ -16,13 +16,5 @@ import java.util.List;
 @Service("messageService")
 @Transactional
 public class MessageServiceImpl {
-    @Autowired
-    private IMessageService messageService;
 
-    @RequestMapping(value = "api/public/reservation/post", method = RequestMethod.POST)
-    public void postMessage(@RequestParam("id_user_receiver") int id_user_receiver,
-                            @RequestParam("id_use_senderr") int id_user_sender,
-                            @RequestParam("message") String message) throws Exception {
-        messageService.postMessage(id_user_receiver, id_user_sender, message);
-    }
 }

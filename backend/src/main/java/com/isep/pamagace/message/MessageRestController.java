@@ -1,11 +1,7 @@
 package com.isep.pamagace.message;
 
-import com.isep.pamagace.reservation.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,6 +9,16 @@ import java.util.List;
 public class MessageRestController {
     @Autowired
     private IMessageDao messageDao;
+
+    @Autowired
+    private IMessageService messageService;
+
+    @RequestMapping(value = "api/public/message/post", method = RequestMethod.POST)
+    public void postMessage(@RequestParam("id_user_receiver") int id_user_receiver,
+                            @RequestParam("id_use_sender") int id_user_sender,
+                            @RequestParam("message") String message) throws Exception {
+        messageService.postMessage(id_user_receiver, id_user_sender, message);
+    }
 
     @RequestMapping(value = "api/public/message/get/all", method = RequestMethod.GET)
     public List<Message> getMessages() {
@@ -33,4 +39,6 @@ public class MessageRestController {
     public Message getMessage(@PathVariable("id_message") int id_message) {
         return messageDao.findMessage(id_message);
     }
+
+
 }

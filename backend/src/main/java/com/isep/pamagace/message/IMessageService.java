@@ -1,11 +1,17 @@
 package com.isep.pamagace.message;
 
+import com.isep.pamagace.reservation.Reservation;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 
-public interface IMessageService {
+@Repository
+public interface IMessageService extends JpaRepository<Message, Integer> {
+
+    @Transactional
     @Modifying
     @Query(value="INSERT INTO Message (id_user_sender, id_user_receiver, message, timestamp) VALUES (?1, ?2, ?3, NOW());",
             nativeQuery = true)

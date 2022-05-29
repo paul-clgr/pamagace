@@ -1,5 +1,6 @@
 package com.isep.pamagace.message;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,6 +18,6 @@ public interface IMessageDao extends JpaRepository<Message, Integer> {
     @Query(value="Select * from Message m WHERE m.id_message",nativeQuery = true)
     Message findMessage(int id_message);
 
-    @Query("Select * from Message m")
+    @Query(value = "Select * from Message m", nativeQuery = true)
     List<Message> findAllMessages();
 }
