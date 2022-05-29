@@ -1,5 +1,4 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {RecommandationsComponent} from "./components/recommandations/recommandations.component";
 import {AccueilComponent} from "./pages/accueil/accueil.component";
@@ -22,27 +21,41 @@ import {LogoutComponent} from "./components/logout/logout.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: AccueilComponent},
-  { path: 'recommendation', component: RecommandationsComponent},
-  { path: 'research', component: RechercheComponent},
-  { path: 'visualhouse', component: VisuMaisonComponent},
-  {path: 'house/:id', component:AffichageMaisonComponent},
-  {path: 'login', component:LoginComponent},
-  {path: 'signin', component:UserFormComponent},
-  {path: 'addHouse', component:HouseFormComponent},
-  {path: 'addCriteria', component:CriteriaFormComponent},
-  {path: 'user', component:UserComponent},
-  {path: 'profile', component:PageProfilComponent},
-  {path: 'inbox', component: InboxComponent},
-  {path: 'users', component: UserComponent},
+  {path: 'home', component: AccueilComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'inscription', component: UserFormComponent},
+  {path: 'logout', component: LogoutComponent},
+
+  {path: 'house/:id', component: AffichageMaisonComponent},
+
   {
-    path: 'logout', component: LogoutComponent
+    path: 'addHouse', component: HouseFormComponent,
+    canActivate: [AuthGuard], data: {role: 'USER'}
+  },
+  {path: 'profil', component: PageProfilComponent,
+    canActivate: [AuthGuard], data: {role: 'USER'}},
+
+  {
+    path: 'admin/users', component: UserComponent,
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
+  },
+  {
+    path: 'admin/addCriteria', component: CriteriaFormComponent,
+    canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}
   },
-  { path: '**', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent}
+
+
+  //{path: 'recommendation', component: RecommandationsComponent},
+  //{path: 'research', component: RechercheComponent},
+  //{path: 'visualhouse', component: VisuMaisonComponent},
+  //{path: 'user', component: UserComponent},
+
+  //{path: 'inbox', component: InboxComponent},
 ]
 
 
