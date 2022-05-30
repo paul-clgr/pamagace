@@ -15,9 +15,9 @@
       </mat-table>
     </div>
     <div class="messages" *ngIf="!isHidden">
-      <form #messageForm="ngForm" (ngSubmit)="postMessage(messageForm)">
-        <input class="textarea" type="text" placeholder="Type here!"/>
-        <input type="submit">
+      <form [formGroup]="messageForm" (ngSubmit)="postMessage()">
+        <input class="textarea" formControlName="message" type="text" placeholder="Type here!"/>
+        <input type="submit" value="Submit">
       </form>
     </div>
     </div>

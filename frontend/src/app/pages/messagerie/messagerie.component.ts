@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MessagerieService } from 'src/app/services/messagerie.service';
 import {Message} from "../../models/message";
-import {NgForm} from "@angular/forms";
+import {FormGroup, NgForm, FormControl,Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-messagerie',
@@ -19,16 +19,23 @@ export class MessagerieComponent implements OnInit {
   isHidden = true;
 
   displayedColumns: string[] = ['id_user_sender', 'message'];
-  constructor( private messagerieService : MessagerieService) { }
+
+  messageForm!: FormGroup;
+
+  constructor( private messagerieService : MessagerieService) {
+    this.messageForm = new FormGroup({
+      'message': new FormControl('', { validators: [Validators.required] })
+    });
+   }
 
   ngOnInit(): void {
     this.userID = 1;
     this.messagerieService.getMessages(this.userID).subscribe({
       next: messages => this.messageList = messages,
-      error: error => this.error = error,
-      complete: () => console.log(this.messageList)
+      error: error => this.error = error
     }
     )
+
   }
 
   answer(idUser:number): void {
@@ -37,8 +44,8 @@ export class MessagerieComponent implements OnInit {
     console.log(this.userAnswer)
   }
 
-  postMessage(form: NgForm): void {
-    this.messagerieService.postMessage(form.value, this.userAnswer);
+  postMessage(): void {
+    this.messagerieService.postMessage(this.messageForm.controls['message'].value, this.userAnswer);
   }
 
 }
