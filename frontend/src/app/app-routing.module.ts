@@ -13,6 +13,7 @@ import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import {UserFormComponent} from "./components/user-form/user-form.component";
+import { MessagerieComponent } from './pages/messagerie/messagerie.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'sighin', component:UserFormComponent},
   {path: 'user', component:UserComponent},
   {path: 'reservation', component:ReservationPageComponent},
+  {path: 'messagerie', component:MessagerieComponent},
   {
     path: 'admin', component: AdminComponent,
     canActivate: [AuthGuard], data: {role: 'ADMIN'}

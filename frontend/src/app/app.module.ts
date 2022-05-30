@@ -34,6 +34,8 @@ import { ReservationPageComponent } from './pages/reservation-page/reservation-p
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { HouseCardComponent } from './components/house-card/house-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MessagerieComponent } from './pages/messagerie/messagerie.component';
+import {MatTableModule, MatTableDataSource} from '@angular/material/table';
 
 
 @NgModule({
@@ -55,7 +57,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReservationComponent,
     ReservationPageComponent,
     UserFormComponent,
-    HouseCardComponent
+    HouseCardComponent,
+    MessagerieComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

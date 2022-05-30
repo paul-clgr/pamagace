@@ -1,0 +1,23 @@
+.flex-container{
+    display: flex;
+  }
+  
+  .contact {
+    width:25%;
+    float: left;
+  }
+
+  input.textarea {
+    left: 0px;
+    right: 0px;
+    width: 50%;
+    height: 50px;
+    z-index: 99;
+    background: #fafafa;
+    border: none;
+    outline: none;
+    padding-left: 55px;
+    padding-right: 55px;
+    color: #666;
+    font-weight: 400;
+  }
