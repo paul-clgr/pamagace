@@ -1,0 +1,24 @@
+<body>
+    <div class="flex-container">
+    <div class="contacts">
+      <mat-table [dataSource]="messageList">
+        <ng-container matColumnDef="id_user_sender">
+          <th mat-header-cell *matHeaderCellDef> Contact </th>
+          <td mat-cell *matCellDef="let element"> {{element.user_sender.firstname}} {{element.user_sender.lastname}}</td>
+        </ng-container>
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef> Contenu </th>
+          <td mat-cell *matCellDef="let element" (click)="answer(element.user_sender.iduser)"> {{element.message}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </mat-table>
+    </div>
+    <div class="messages" *ngIf="!isHidden">
+      <form #messageForm="ngForm" (ngSubmit)="postMessage(messageForm)">
+        <input class="textarea" type="text" placeholder="Type here!"/>
+        <input type="submit">
+      </form>
+    </div>
+    </div>
+    </body>
