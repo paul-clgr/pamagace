@@ -109,7 +109,7 @@ h1 {
   cursor: pointer;
   /* stylings for positioning the buttons at
      the bottom of the carousel */
-  position: absolute;
+  
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
