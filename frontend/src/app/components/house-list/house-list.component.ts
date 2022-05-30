@@ -19,23 +19,7 @@ export class HouseListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.router.url.endsWith('/houses') || this.router.url.endsWith('/admin')){
-    this.houseService.getAllHouse().subscribe({
-        next: houses => {
-          this.houses = houses;
-        },
-        error: error => this.error = error
-      }
-    )}else{
-       this.username = localStorage.getItem('USERNAME');
-      this.houseService.getHousesByOwner(this.username).subscribe({
-          next: houses => {
-            this.houses = houses;
-          },
-          error: error => this.error = error
-        }
-      )
-    }
+    this.getListHouse();
     this.displayedColumns = ['username', 'adress', 'city', 'bedrooms', ' '];
 
   }
@@ -46,12 +30,7 @@ export class HouseListComponent implements OnInit {
 
   deleteHouse(id: number) {
     this.houseService.deleteHousebyId(id).subscribe({
-      next: data => this.houseService.getAllHouse().subscribe({
-        next: houses => {
-          this.houses = houses;
-        },
-        error: error => this.error = error
-      }),
+      next: data => this.getListHouse(),
       error: error => this.error = error
     });
 
@@ -61,4 +40,23 @@ export class HouseListComponent implements OnInit {
     this.router.navigate(['house/'+id])
   }
 
+  getListHouse(){
+    if (this.router.url.endsWith('/houses') || this.router.url.endsWith('/admin')){
+      this.houseService.getAllHouse().subscribe({
+          next: houses => {
+            this.houses = houses;
+          },
+          error: error => this.error = error
+        }
+      )}else{
+      this.username = localStorage.getItem('USERNAME');
+      this.houseService.getHousesByOwner(this.username).subscribe({
+          next: houses => {
+            this.houses = houses;
+          },
+          error: error => this.error = error
+        }
+      )
+    }
+  }
 }
