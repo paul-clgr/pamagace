@@ -33,7 +33,7 @@ export class HouseFormComponent implements OnInit {
 
   update:boolean=false;
 
-  constructor(private houseService: HouseService, private router: Router, private criteriaService: CriteriaService, private userService: UserService,private activatedRoute: ActivatedRoute,private criteriaService: CriteriaService) { }
+  constructor(private houseService: HouseService, private router: Router, private criteriaService: CriteriaService, private userService: UserService,private activatedRoute: ActivatedRoute) { }
 
 
   ngOnInit(): void {
