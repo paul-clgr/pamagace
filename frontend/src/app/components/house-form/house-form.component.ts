@@ -6,6 +6,8 @@ import {House} from "../../models/house";
 import {Criteria} from "../../models/criteria";
 import {CriteriaService} from "../../services/criteria.service";
 import {MatChip} from "@angular/material/chips";
+import {UserService} from "../../services/user.service";
+import {User} from "../../models/user";
 
 @Component({
   selector: 'app-house-form',
@@ -22,6 +24,7 @@ export class HouseFormComponent implements OnInit {
   idUser!:number;
   criterias?: Criteria[];
   idCriterias!: number[];
+  user!: User;
 
   types: string[] = ['House', 'Apartment'];
 
@@ -30,8 +33,8 @@ export class HouseFormComponent implements OnInit {
 
   update:boolean=false;
 
+  constructor(private houseService: HouseService, private router: Router, private criteriaService: CriteriaService, private userService: UserService,private activatedRoute: ActivatedRoute,private criteriaService: CriteriaService) { }
 
-  constructor(private activatedRoute: ActivatedRoute, private houseService: HouseService, private router: Router, private criteriaService: CriteriaService) { }
 
   ngOnInit(): void {
     this.criteriaService.getCriterias().subscribe({
@@ -49,12 +52,21 @@ export class HouseFormComponent implements OnInit {
 
   add(addHomeForm: NgForm) {
     let newHouse = addHomeForm.value;
-    newHouse.idUser= 6; // TODO a recuperer avec identification
-    this.houseService.addHouse(newHouse).subscribe({
-      next: house =>this.house = house,
-      error: error => this.error=error
-    })
-
+    const name = localStorage.getItem('USERNAME')
+    if (name!=null) {
+      this.userService.getUser(name).subscribe({
+        next: user => {
+          console.log(user.iduser);
+          newHouse.idUser = user.iduser;
+          console.log(newHouse)
+          this.houseService.addHouse(newHouse).subscribe({
+            next: house => {this.house = house
+            this.router.navigate(['/profil'])},
+            error: error => this.error = error
+          })
+        }
+      })
+    }
   }
 /*
   toggleSelection(chip: MatChip) {

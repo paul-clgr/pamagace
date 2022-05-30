@@ -2,13 +2,53 @@
   <button mat-icon-button class="example-icon" (click)="toHome()">
     <mat-icon>home</mat-icon>
   </button>
-  <span>{{titleHeader}}</span>
+  <span class="title">{{titleHeader}}</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon forum" aria-label="Example icon-button with heart icon" (click)="toForum()">
+  <button mat-icon-button class="example-icon favorite-icon forum" aria-label="Example icon-button with heart icon"
+          (click)="toForum()">
     <mat-icon>forum</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon pdp" aria-label="Example icon-button with share icon" (click)="toProfil()">
+  <button mat-icon-button class="example-icon pdp" aria-label="Example icon-button with share icon"
+          (click)="toProfil()">
     <mat-icon>person</mat-icon>
   </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" *ngIf="isLoggedIn">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="toProfil()">
+      <mat-icon>home</mat-icon>
+      <span>My house</span>
+    </button>
+    <button mat-menu-item (click)="toAddhouse()">
+      <mat-icon>add</mat-icon>
+      <span>Add houses</span>
+    </button>
+    <button mat-menu-item (click)="toReservation()">
+      <mat-icon>event</mat-icon>
+      <span>My reservation</span>
+    </button>
+    <button mat-menu-item (click)="toEditProfil()">
+      <mat-icon>account_circle</mat-icon>
+      <span>Edit profil</span>
+    </button>
+    <button mat-menu-item  *ngIf="role == 'ADMIN'" (click)="toUsers()">
+      <mat-icon>supervisor_account</mat-icon>
+      <span>Users</span>
+    </button>
+    <button mat-menu-item  *ngIf="role == 'ADMIN'" (click)="toHouses()">
+      <mat-icon>location_city</mat-icon>
+      <span>Houses</span>
+    </button>
+    <button mat-menu-item  *ngIf="role == 'ADMIN'" (click)="toCriterias()">
+      <mat-icon>library_add</mat-icon>
+      <span>Criterias</span>
+    </button>
+    <button mat-menu-item (click)="toLogout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>
 

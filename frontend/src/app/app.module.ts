@@ -22,7 +22,7 @@ import {VisuMaisonComponent} from './pages/visu-maison/visu-maison.component';
 import {AffichageMaisonComponent} from './components/affichage-maison/affichage-maison.component';
 import {LoginComponent} from './pages/login/login.component';
 import {AdminComponent} from './pages/admin/admin.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {UserComponent} from './components/user/user.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
@@ -42,12 +42,18 @@ import {CriteriaFormComponent} from './components/criteria-form/criteria-form.co
 import {LogoutComponent} from './components/logout/logout.component';
 import {MatListModule} from "@angular/material/list";
 import {HouseCardComponent} from './components/house-card/house-card.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import {MatTableModule} from "@angular/material/table";
+import { CreiteriaListComponent } from './components/creiteria-list/creiteria-list.component';
+import { HouseListComponent } from './components/house-list/house-list.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagerieComponent } from './pages/messagerie/messagerie.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -79,7 +85,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     InboxComponent,
     ProfilComponent,
     HouseCardComponent,
-    MessagerieComponent
+    MessagerieComponent,
+    HouseCardComponent,
+    CreiteriaListComponent,
+    CreiteriaListComponent,
+    HouseListComponent
   ],
   imports: [
     BrowserModule,
@@ -103,8 +113,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatTableModule,
     MatDialogModule
+    MatMenuModule,
+    MatTableModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent],
   exports: [MatToolbarModule]
 })

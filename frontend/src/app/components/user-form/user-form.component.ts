@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
 import {ActivatedRoute, Router} from "@angular/router";
+import {AuthService} from "../../auth/auth.service";
 
 @Component({
   selector: 'app-user-form',
@@ -23,10 +24,10 @@ export class UserFormComponent implements OnInit {
   hide = true;
   user !: User;
   error !: string;
+  role!: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private http: HttpClient, private userService: UserService, private router: Router) {
+  constructor(private http: HttpClient, private userService: UserService, private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute) {
   }
-
   ngOnInit(): void {
     this.usernameupdate = this.activatedRoute.snapshot.paramMap.get('username');
     if (this.usernameupdate){
@@ -36,11 +37,24 @@ export class UserFormComponent implements OnInit {
 
   signIn(form: NgForm) {
     let newUser = form.value;
-      this.userService.addUser(newUser).subscribe({
-        next: user => this.user = user,
+    if (this.router.url.endsWith('/admin/addadmin')){
+      this.userService.addAdmin(newUser).subscribe({
+        next: user => {this.user = user;
+          this.router.navigate(['/admin/users'])},
         error: error => this.error = error
       })
-    this.router.navigate(['/home']);
+    }else {
+
+      this.userService.addUser(newUser).subscribe({
+        next: user => {this.user = user
+          this.authService.getConnexion(newUser.username, newUser.password).subscribe({ next: data => {
+            this.authService.login(data.username, data.role);
+            this.router.navigate(['']);
+          } })
+        },
+        error: error => this.error = error
+      })
+    }
   }
 
   getUserValues(username:string){

@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
         next: data => {
           console.log(data);
           this.authService.login(data.username, data.role);
+          this.router.navigate(['']);
         }
 
       })
-    ;
-    //this.router.navigate(['/users']);
+
   }
 
 

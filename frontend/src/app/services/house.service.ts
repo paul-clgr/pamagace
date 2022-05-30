@@ -63,6 +63,17 @@ export class HouseService {
 
   // }
 
+  deleteHousebyId(id:number){
+    return this.http.get('http://localhost:8080/api/public/house/deleteHouse/'+id).pipe(catchError(this.handleError));
+  }
+
+  getHousesByOwner(username:string|null): Observable<House[]>{
+    return this.http.get<House[]>('http://localhost:8080/api/public/house/username/'+username, ).pipe(
+      tap(houses => console.log('houses: ', houses)),
+      catchError(this.handleError)
+    );
+  }
+
   // getStatsDemandesByMonth(minDate, maxDate): Observable<PeriodeRecueil[]> {
   //   return this.http.get<PeriodeRecueil[]>(
   //     `${this.baseUrl}/months/${minDate}/${maxDate}`

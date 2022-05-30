@@ -20,7 +20,7 @@ export class CriteriaService {
   }
 
   addCriteria(criteria: Criteria): Observable<Criteria> {
-    return this.http.post<Criteria>('http://localhost:8080/api/public/criteria/addCriteria', {
+    return this.http.post<Criteria>('http://localhost:8080/api/admin/criteria/addCriteria', {
       "name": criteria.name,
       "category": criteria.category,
       "description": criteria.description,
@@ -30,6 +30,9 @@ export class CriteriaService {
     );
   }
 
+  deleteCriteriabyId(id: number) {
+    return this.http.get('http://localhost:8080/api/admin/criteria/deleteCriteria/' + id).pipe(catchError(this.handleError));
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

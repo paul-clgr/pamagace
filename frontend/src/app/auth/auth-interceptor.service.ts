@@ -12,9 +12,8 @@ export class AuthInterceptorService implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-
-    if (sessionStorage.getItem('USERNAME') && sessionStorage.getItem('TOKEN')) {
-      const auth = sessionStorage.getItem('TOKEN');
+    if (localStorage.getItem('USERNAME') && localStorage.getItem('TOKEN')) {
+      const auth = localStorage.getItem('TOKEN');
       req = req.clone({
         setHeaders: {
           Authorization: 'Basic ' + auth,
