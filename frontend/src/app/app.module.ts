@@ -42,6 +42,11 @@ import {CriteriaFormComponent} from './components/criteria-form/criteria-form.co
 import {LogoutComponent} from './components/logout/logout.component';
 import {MatListModule} from "@angular/material/list";
 import {HouseCardComponent} from './components/house-card/house-card.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
+import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessagerieComponent } from './pages/messagerie/messagerie.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -59,6 +64,8 @@ import {HouseCardComponent} from './components/house-card/house-card.component';
     LoginComponent,
     AdminComponent,
     UserComponent,
+    ReservationComponent,
+    ReservationPageComponent,
     UserFormComponent,
     PageProfilComponent,
     ProfilComponent,
@@ -70,7 +77,8 @@ import {HouseCardComponent} from './components/house-card/house-card.component';
     CriteriaFormComponent,
     InboxComponent,
     ProfilComponent,
-    HouseCardComponent
+    HouseCardComponent,
+    MessagerieComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +99,8 @@ import {HouseCardComponent} from './components/house-card/house-card.component';
     MatChipsModule,
     MatSelectModule,
     MatListModule,
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

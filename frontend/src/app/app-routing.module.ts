@@ -10,7 +10,9 @@ import {AdminComponent} from "./pages/admin/admin.component";
 import {AuthGuard} from "./auth/auth.guard";
 import {LoginComponent} from "./pages/login/login.component";
 import {UserComponent} from "./components/user/user.component";
+import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import {UserFormComponent} from "./components/user-form/user-form.component";
+import { MessagerieComponent } from './pages/messagerie/messagerie.component';
 import {InboxComponent} from "./pages/inbox/inbox.component";
 import {PageProfilComponent} from "./pages/page-profil/page-profil.component";
 import {HouseFormComponent} from "./components/house-form/house-form.component";
@@ -27,6 +29,7 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
 
   {path: 'house/:id', component: AffichageMaisonComponent},
+  {path: 'messagerie', component:MessagerieComponent}
 
   {
     path: 'addHouse', component: HouseFormComponent,
