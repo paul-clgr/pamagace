@@ -47,6 +47,7 @@ import { ReservationPageComponent } from './pages/reservation-page/reservation-p
 import { ReactiveFormsModule } from '@angular/forms';
 import { MessagerieComponent } from './pages/messagerie/messagerie.component';
 import {MatTableModule} from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatListModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

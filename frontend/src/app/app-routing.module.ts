@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'logout', component: LogoutComponent},
 
   {path: 'house/:id', component: AffichageMaisonComponent},
-  {path: 'messagerie', component:MessagerieComponent}
+  {path: 'messagerie', component:MessagerieComponent},
 
   {
     path: 'addHouse', component: HouseFormComponent,
