@@ -65,7 +65,7 @@ h1 {
   height: 50%;
   position: relative;
   /* you can change the animation settings from below */
-  /*animation: slideshow 5s infinite;*/
+  animation: slideshow 20s infinite;
 }
 /* define width and height for images*/
 .slide {
@@ -109,7 +109,7 @@ h1 {
   cursor: pointer;
   /* stylings for positioning the buttons at
      the bottom of the carousel */
-  
+
   bottom: 3%;
   left: 50%;
   transform: translateX(-50%);
