@@ -1,0 +1,72 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title *ngIf="!update">Add a house</mat-card-title>
+    <mat-card-title *ngIf="update">Update a house</mat-card-title>
+
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" #addHouseForm="ngForm" (ngSubmit)="add(addHouseForm)">
+      <table>
+        <tr>
+          <mat-radio-group aria-label="Type" [(ngModel)]="type" name="type" required color="primary">
+            <mat-radio-button *ngFor="let chosenType of types" [value]="chosenType">{{chosenType}}</mat-radio-button>
+          </mat-radio-group>
+        <tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="description" name="description" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Adress</mat-label>
+            <input matInput [(ngModel)]="adress" name="adress" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)]="city" name="city" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Nb of rooms</mat-label>
+            <input matInput type="number" [(ngModel)]="bedrooms" name="bedrooms" required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <!--
+          <mat-select multiple>
+          <mat-chip-list>
+            <mat-chip #c="matChip" *ngFor="let criteria of criterias" [ngModel]="criteria.idcriteria" (click)="toggleSelection(c)" name="idCriterias">
+              <mat-icon *ngIf="c.selected">check</mat-icon>
+              {{criteria.name}}
+            </mat-chip>
+          </mat-chip-list>
+          </mat-select>
+          -->
+          <mat-form-field appearance="fill">
+            <mat-label>Demands</mat-label>
+            <mat-select [ngModel]="criterias" name="idCriterias" multiple required >
+              <mat-option *ngFor="let criteria of criterias"
+                          [value]="criteria.idcriteria">{{criteria.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </tr>
+        <button *ngIf="update" mat-raised-button type="submit" color="primary">
+          Update
+        </button>
+        <button *ngIf="!update" mat-raised-button type="submit" color="primary">
+          Add
+        </button>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+
+
+

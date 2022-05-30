@@ -9,13 +9,13 @@ import {User} from "../../models/user";
 })
 export class UserComponent implements OnInit {
 
-  public user: User | undefined;
+  public user: User[] | undefined;
   private error: string | undefined;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe({
+    this.userService.getUsers().subscribe({
       next: user => this.user = user,
       error: error => this.error = error
     }

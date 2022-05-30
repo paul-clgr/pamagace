@@ -12,12 +12,20 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<User>{
-    return this.http.get<User>('http://localhost:8080/api/public/user/admin').pipe(
+  getUser(username:String): Observable<User>{
+    return this.http.get<User>('http://localhost:8080/api/public/user/'+username).pipe(
       tap(user=> console.log('user: ', user)),
       catchError(this.handleError)
     );
   }
+
+  getUsers(): Observable<User[]>{
+    return this.http.get<User[]>('http://localhost:8080/api/admin/users').pipe(
+      tap(user=> console.log('user: ', user)),
+      catchError(this.handleError)
+    );
+  }
+
 
   private handleError(error: HttpErrorResponse){
     if (error.status === 0) {
