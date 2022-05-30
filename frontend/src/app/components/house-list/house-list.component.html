@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header><mat-card-title>List of Houses</mat-card-title></mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="houses" class="mat-elevation-z8">
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> Owners </th>
+        <td mat-cell *matCellDef="let element"> {{element.user.username}} </td>
+      </ng-container>
+      <ng-container matColumnDef="adress">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"><button mat-button (click)="getHouse(element.idhouse) "> {{element.adress}}</button> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="bedrooms">
+        <th mat-header-cell *matHeaderCellDef> Nb of bedrooms </th>
+        <td mat-cell *matCellDef="let element"> {{element.bedrooms}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef=" ">
+        <th mat-header-cell *matHeaderCellDef> <button mat-raised-button class="add-button" (click)="toAddHouse()">
+          <mat-icon>add</mat-icon>Add house
+        </button></th>
+        <td mat-cell *matCellDef="let element"> <button mat-icon-button (click)="deleteHouse(element.idhouse)"><mat-icon color="primary">delete</mat-icon></button> </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+</mat-card>

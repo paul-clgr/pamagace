@@ -57,6 +57,11 @@ public class UserRestController {
         return userDao.findUserWithName(username);
     }
 
+    @GetMapping(value = "api/admin/deleteUser/{id}")
+    public void deleteUserById(@PathVariable(value = "id") int id) {
+        userDao.deleteById(id);
+    }
+
     @PostMapping(value = "api/public/login")
     public User login(@RequestBody String username) {
         System.out.println(username);
