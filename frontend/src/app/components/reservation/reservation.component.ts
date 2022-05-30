@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
@@ -12,7 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ReservationComponent implements OnInit {
   id_user = 0;
-  id_house = 0;
+  id_house!: number;
 
   range = new FormGroup({
     start_date: new FormControl(),
@@ -23,7 +23,6 @@ export class ReservationComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.id_house = 1;
     this.id_user = 4;
   }
 

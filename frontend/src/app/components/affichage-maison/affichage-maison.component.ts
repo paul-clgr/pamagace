@@ -5,6 +5,8 @@ import {HouseService} from "../../services/house.service";
 import {map, Observable, switchMap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {Criteria} from "../../models/criteria";
+import {MatDialog} from '@angular/material/dialog';
+import { ReservationComponent } from '../reservation/reservation.component';
 
 @Component({
   selector: 'app-affichage-maison',
@@ -26,7 +28,7 @@ export class AffichageMaisonComponent implements OnInit {
   conditions: Criteria[] = [];
   limites: Criteria[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private houseService: HouseService) {
+  constructor(private activatedRoute: ActivatedRoute, private houseService: HouseService, private dialog: MatDialog) {
 
   }
 
@@ -61,5 +63,12 @@ export class AffichageMaisonComponent implements OnInit {
         this.limites.push(criteria);
       }
     }
+  }
+
+  openDialog(): void {
+    this.dialog.open(ReservationComponent, {
+      data: {
+      id_house: this.id
+    }});
   }
 }
